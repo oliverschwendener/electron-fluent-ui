@@ -2,14 +2,14 @@ import { App } from "electron";
 import { WindowManager } from "./WindowManager";
 
 export class MainApplication {
-    public constructor(private readonly app: App, private readonly windowManager: WindowManager) {}
+    public constructor(private readonly electronApp: App, private readonly windowManager: WindowManager) {}
 
     public start(): void {
         this.registerAppEventListeners();
     }
 
     private registerAppEventListeners(): void {
-        this.app.on("ready", () => {
+        this.electronApp.on("ready", () => {
             this.windowManager.createMainWindow();
         });
     }
