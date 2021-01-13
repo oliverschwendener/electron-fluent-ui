@@ -2,6 +2,24 @@ const path = require("path");
 
 const distributionDirectoryPath = path.join(__dirname, "dist");
 
+const entryPoints = {
+    main: path.join(__dirname, "src", "main", "Main.ts"),
+    preload: path.join(__dirname, "src", "shared", "Preload.ts"),
+    renderer: path.join(__dirname, "src", "renderer", "Renderer.tsx"),
+};
+
+const outputFiles = {
+    main: "Main.js",
+    preload: "Preload.js",
+    renderer: "Renderer.js",
+};
+
+const targets = {
+    main: "electron-main",
+    preload: "electron-preload",
+    renderer: "electron-renderer",
+};
+
 const baseConfig = {
     module: {
         rules: [
@@ -22,30 +40,30 @@ const baseConfig = {
 };
 
 const mainConfig = {
-    entry: path.join(__dirname, "src", "main", "main.ts"),
+    entry: entryPoints.main,
     output: {
-        filename: "main.js",
+        filename: outputFiles.main,
         path: distributionDirectoryPath,
     },
-    target: "electron-main",
+    target: targets.main,
 };
 
 const preloadConfig = {
-    entry: path.join(__dirname, "src", "shared", "preload.ts"),
+    entry: entryPoints.preload,
     output: {
-        filename: "preload.js",
+        filename: outputFiles.preload,
         path: distributionDirectoryPath,
     },
-    target: "electron-preload",
+    target: targets.preload,
 };
 
 const rendererConfig = {
-    entry: path.join(__dirname, "src", "renderer", "renderer.tsx"),
+    entry: entryPoints.renderer,
     output: {
-        filename: "renderer.js",
+        filename: outputFiles.renderer,
         path: distributionDirectoryPath,
     },
-    target: "electron-renderer",
+    target: targets.renderer,
 };
 
 module.exports = [

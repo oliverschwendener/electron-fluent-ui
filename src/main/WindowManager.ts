@@ -2,9 +2,14 @@ import { BrowserWindow } from "electron";
 import { join } from "path";
 
 export class WindowManager {
+    private readonly preloadScriptFilePath: string;
+    private readonly mainHtmlFilePath: string;
     private mainWindow: null | BrowserWindow;
 
     public constructor() {
+        this.preloadScriptFilePath = join(__dirname, "Preload.js");
+        this.mainHtmlFilePath = join(__dirname, "..", "views", "main.html");
+
         this.mainWindow = null;
     }
 
@@ -14,10 +19,10 @@ export class WindowManager {
                 contextIsolation: true,
                 enableRemoteModule: false,
                 nodeIntegration: false,
-                preload: join(__dirname, "preload.js"),
+                preload: this.preloadScriptFilePath,
             },
         });
 
-        this.mainWindow.loadURL(join(__dirname, "..", "views", "main.html"));
+        this.mainWindow.loadFile(this.mainHtmlFilePath);
     }
 }
