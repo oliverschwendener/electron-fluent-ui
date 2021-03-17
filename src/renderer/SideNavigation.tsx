@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Nav, INavLinkGroup, INavLink, INavStyles, Stack, IStackItemStyles } from "@fluentui/react";
 import { NeutralColors } from "@fluentui/theme";
 
@@ -61,21 +61,11 @@ export const SideNavigation: React.FC = () => {
         },
     ];
 
-    const [selectedKey, updateSelectedKey] = useState("Dashboard");
-
-    const onLinkClick = (event?: React.MouseEvent, item?: INavLink) => {
-        if (item && item.key) {
-            updateSelectedKey(item.key);
-        }
-    };
-
     return (
         <Nav
             styles={navStyles}
             ariaLabel="Nav example similiar to one found in this demo page"
             groups={navLinkGroups}
-            selectedKey={selectedKey}
-            onLinkClick={onLinkClick}
         ></Nav>
     );
 };
