@@ -2,6 +2,10 @@ const path = require("path");
 
 const distributionDirectoryPath = path.join(__dirname, "dist");
 
+const mode = process.env.NODE_ENV === "production" ? "production" : "development";
+
+console.log(`Mode: ${mode}`);
+
 const entryPoints = {
     main: path.join(__dirname, "src", "main", "Main.ts"),
     preload: path.join(__dirname, "src", "shared", "Preload.ts"),
@@ -37,6 +41,7 @@ const baseConfig = {
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
     },
+    mode,
 };
 
 const mainConfig = {
