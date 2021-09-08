@@ -16,9 +16,6 @@ export class WindowManager {
     public createMainWindow(): void {
         this.mainWindow = new BrowserWindow({
             webPreferences: {
-                contextIsolation: true,
-                enableRemoteModule: false,
-                nodeIntegration: false,
                 preload: this.preloadScriptFilePath,
             },
         });
