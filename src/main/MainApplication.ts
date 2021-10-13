@@ -9,8 +9,6 @@ export class MainApplication {
     }
 
     private registerAppEventListeners(): void {
-        this.electronApp.on("ready", () => {
-            this.windowManager.createMainWindow();
-        });
+        this.electronApp.on("ready", () => this.windowManager.createMainWindow());
     }
 }

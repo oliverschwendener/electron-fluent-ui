@@ -4,13 +4,11 @@ import { join } from "path";
 export class WindowManager {
     private readonly preloadScriptFilePath: string;
     private readonly mainHtmlFilePath: string;
-    private mainWindow: null | BrowserWindow;
+    private mainWindow: null | BrowserWindow = null;
 
     public constructor() {
         this.preloadScriptFilePath = join(__dirname, "Preload.js");
         this.mainHtmlFilePath = join(__dirname, "..", "views", "main.html");
-
-        this.mainWindow = null;
     }
 
     public createMainWindow(): void {
