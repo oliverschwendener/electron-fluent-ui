@@ -3,6 +3,11 @@
     "version": "0.1.0",
     "main": "bundle/Main.js",
     "license": "MIT",
+    "author": {
+        "email": "oliver.schwendener@hotmail.com",
+        "name": "Oliver Schwendener",
+        "url": "https://github.com/oliverschwendener"
+    },
     "devDependencies": {
         "@babel/cli": "^7.15.7",
         "@babel/core": "^7.15.8",
