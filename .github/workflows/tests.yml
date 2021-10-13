@@ -7,8 +7,9 @@ env:
 
 jobs:
     tests:
-        matrix:
-            os: [macos-latest, windows-latest, ubuntu-latest]
+        strategy:
+            matrix:
+                os: [macos-latest, windows-latest, ubuntu-latest]
         runs-on: ${{ matrix.os }}
         name: Run tests on ${{ matrix.os }} with Node ${{ env.NODE_VERSION }}
         steps:
