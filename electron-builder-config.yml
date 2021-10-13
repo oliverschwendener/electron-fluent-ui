@@ -1,0 +1,45 @@
+directories:
+    output: dist
+    buildResources: bundle
+
+files:
+    - bundle/**/*.js
+    - views/**/*.html
+
+win:
+    icon: build/app-icon.ico
+    publish:
+        - github
+    target:
+        - target: nsis
+          arch:
+              - x64
+              - ia32
+        - target: zip
+          arch:
+              - x64
+              - ia32
+
+nsis:
+    oneClick: false
+    allowToChangeInstallationDirectory: true
+    deleteAppDataOnUninstall: true
+
+mac:
+    icon: build/app-icon.png
+    category: public.app-category.utilities
+    publish:
+        - github
+    target:
+        - dmg
+        - zip
+
+linux:
+    icon: build/app-icon.png
+    publish:
+        - github
+    target:
+        - AppImage
+        - snap
+        - deb
+        - zip

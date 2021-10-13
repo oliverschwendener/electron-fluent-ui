@@ -1,6 +1,6 @@
 const path = require("path");
 
-const distributionDirectoryPath = path.join(__dirname, "dist");
+const distributionDirectoryPath = path.join(__dirname, "bundle");
 
 const mode = process.env.NODE_ENV === "production" ? "production" : "development";
 
