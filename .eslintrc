@@ -1,0 +1,22 @@
+{
+    "root": true,
+    "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": 0
+    },
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "overrides": [
+        {
+            "files": "*.ts",
+            "parser": "@typescript-eslint/parser"
+        }
+    ],
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}

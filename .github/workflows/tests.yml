@@ -23,6 +23,9 @@ jobs:
               env:
                   NODE_ENV: development
 
+            - name: Lint files
+              run: yarn lint
+
             - name: Bundle files
               run: yarn bundle
               env:

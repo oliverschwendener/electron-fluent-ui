@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { contextBridge, ipcRenderer } from "electron";
 import { IpcRendererEvent } from "electron/common";
 import { Bridge } from "./Bridge";

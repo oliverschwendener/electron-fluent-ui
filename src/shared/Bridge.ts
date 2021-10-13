@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IpcRendererEvent } from "electron/common";
 import { IpcChannel } from "./IpcChannel";
 

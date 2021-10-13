@@ -1,10 +1,10 @@
-import { Content } from "./Content";
 import { initializeIcons, Stack } from "@fluentui/react";
-import { IpcRendererBridge } from "../shared/Bridge";
-import { Navigation } from "./Navigation";
 import { ThemeProvider } from "@fluentui/react/lib/Theme";
-import { Themes } from "./Themes";
 import React, { FC, useState } from "react";
+import { IpcRendererBridge } from "../shared/Bridge";
+import { Content } from "./Content";
+import { Navigation } from "./Navigation";
+import { Themes } from "./Themes";
 
 export enum Theme {
     UeliDark = "UeliDark",
