@@ -20,8 +20,10 @@ jobs:
 
             - name: Install node dependencies
               run: yarn install
+              env:
+                  NODE_ENV: development
 
             - name: Bundle files
               run: yarn bundle
               env:
-                  NODE_ENV: production
+                  NODE_ENV: development
