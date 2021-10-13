@@ -13,6 +13,7 @@ export class WindowManager {
 
     public createMainWindow(): void {
         this.mainWindow = new BrowserWindow({
+            autoHideMenuBar: true,
             webPreferences: {
                 preload: this.preloadScriptFilePath,
             },
