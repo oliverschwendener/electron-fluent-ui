@@ -11,6 +11,10 @@ win:
     publish:
         - github
     target:
+        - target: msi
+          arch:
+              - x64
+              - ia32
         - target: nsis
           arch:
               - x64
