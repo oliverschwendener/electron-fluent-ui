@@ -19,8 +19,8 @@ import {
     Toggle,
 } from "@fluentui/react";
 import { useBoolean, useId } from "@fluentui/react-hooks";
-import { Theme } from "./App";
 import React, { FC, FormEvent, useMemo } from "react";
+import { Theme } from "./App";
 
 interface Props {
     currentTheme: Theme;

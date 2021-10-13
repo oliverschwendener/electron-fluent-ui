@@ -7,4 +7,6 @@ import { App } from "./App";
 const ipcRenderer: IpcRendererBridge = window.Bridge.ipcRenderer;
 ipcRenderer.send(IpcChannel.rendererStarted);
 
-render(<App ipcRenderer={ipcRenderer}></App>, document.getElementById("react-app"));
+document.addEventListener("DOMContentLoaded", () =>
+    render(<App ipcRenderer={ipcRenderer}></App>, document.getElementById("react-app"))
+);

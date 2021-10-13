@@ -1,10 +1,12 @@
-import { initializeIcons, Stack } from "@fluentui/react";
-import { ThemeProvider } from "@fluentui/react/lib/Theme";
+import { initializeIcons, Stack, StackItem } from "@fluentui/react";
+import { Theme as FluentUiTheme, ThemeProvider } from "@fluentui/react/lib/Theme";
 import React, { FC, useState } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import { IpcRendererBridge } from "../shared/Bridge";
 import { Content } from "./Content";
 import { Navigation } from "./Navigation";
-import { Themes } from "./Themes";
+import { UeliColorThemes } from "./Themes";
+import { Welcome } from "./Welcome";
 
 export enum Theme {
     UeliDark = "UeliDark",
@@ -17,38 +19,38 @@ export const App: FC<{ ipcRenderer: IpcRendererBridge }> = () => {
     initializeIcons();
 
     const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.UeliDark);
-    const changeTheme = (theme: string) => {
-        Object.values(Theme).forEach((t) => {
-            if (t.toString() === theme) {
-                setCurrentTheme(t);
+    const changeTheme = (nextTheme: string) => {
+        Object.values(Theme).forEach((theme) => {
+            if (theme.toString() === nextTheme) {
+                setCurrentTheme(theme);
             }
         });
     };
 
-    const getTheme = () => {
-        switch (currentTheme) {
-            case Theme.WindowsDark:
-                return Themes.WindowsDark;
-            case Theme.WindowsLight:
-                return Themes.WindowsLight;
-            case Theme.UeliLight:
-                return Themes.UeliLight;
-            case Theme.UeliDark:
-            default:
-                return Themes.UeliDark;
-        }
+    const themeMapping: Record<Theme, FluentUiTheme> = {
+        UeliDark: UeliColorThemes.UeliDark,
+        UeliLight: UeliColorThemes.UeliLight,
+        WindowsDark: UeliColorThemes.WindowsDark,
+        WindowsLight: UeliColorThemes.WindowsLight,
     };
 
     return (
-        <ThemeProvider theme={getTheme()} applyTo="body">
-            <Stack horizontal={true} verticalFill={true}>
-                <Stack.Item verticalFill>
-                    <Navigation />
-                </Stack.Item>
-                <Stack.Item grow={1}>
-                    <Content currentTheme={currentTheme} onThemeChange={changeTheme} />
-                </Stack.Item>
-            </Stack>
+        <ThemeProvider theme={themeMapping[currentTheme]} applyTo="body">
+            <BrowserRouter>
+                <Stack horizontal verticalFill>
+                    <StackItem verticalFill>
+                        <Navigation />
+                    </StackItem>
+                    <StackItem grow={1}>
+                        <Route path="/" exact>
+                            <Welcome />
+                        </Route>
+                        <Route path="/content" exact>
+                            <Content currentTheme={currentTheme} onThemeChange={changeTheme} />
+                        </Route>
+                    </StackItem>
+                </Stack>
+            </BrowserRouter>
         </ThemeProvider>
     );
 };

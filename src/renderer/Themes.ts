@@ -1,6 +1,6 @@
 import { createTheme } from "@fluentui/react/lib/Theme";
 
-export const Themes = {
+export const UeliColorThemes = {
     UeliDark: createTheme({
         palette: {
             themePrimary: "#55efc4",

@@ -1,76 +1,63 @@
-import React, { FC, MouseEvent, useState } from "react";
-import { Nav, INavLink, INavLinkGroup } from "@fluentui/react/lib/Nav";
+import { INavLink, INavLinkGroup, Nav } from "@fluentui/react/lib/Nav";
+import React, { FC, MouseEvent, useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
 const navLinkGroups: INavLinkGroup[] = [
     {
         links: [
             {
-                name: "Home",
-                url: "#",
-                expandAriaLabel: "Expand Home section",
-                collapseAriaLabel: "Collapse Home section",
-                key: "home",
+                name: "Welcome",
+                key: "welcome",
+                url: "/",
+            },
+            {
+                name: "Content",
+                key: "content",
+                url: "/content",
+            },
+            {
+                name: "Basic Inputs",
+                key: "basic-inputs",
+                url: "/basic-inputs",
                 links: [
                     {
-                        name: "Activity",
-                        url: "#",
-                        key: "key1",
-                        target: "_blank",
+                        name: "Button",
+                        key: "button",
+                        url: "/button",
                     },
                     {
-                        name: "MSN",
-                        url: "#",
-                        disabled: true,
-                        key: "key2",
-                        target: "_blank",
+                        name: "Checkbox",
+                        key: "checkbox",
+                        url: "/checkbox",
+                    },
+                    {
+                        name: "Choicegroup",
+                        key: "choicegroup",
+                        url: "/choicegroup",
+                    },
+                    {
+                        name: "Dropdown",
+                        key: "dropdown",
+                        url: "/dropdown",
                     },
                 ],
-                isExpanded: true,
-            },
-            {
-                name: "Documents",
-                url: "#",
-                key: "key3",
-                isExpanded: true,
-                target: "_blank",
-            },
-            {
-                name: "Pages",
-                url: "#",
-                key: "key4",
-                target: "_blank",
-            },
-            {
-                name: "Notebook",
-                url: "#",
-                key: "key5",
-                disabled: true,
-            },
-            {
-                name: "Communication and Media",
-                url: "#",
-                key: "key6",
-                target: "_blank",
-            },
-            {
-                name: "News",
-                url: "#",
-                icon: "News",
-                key: "key7",
-                target: "_blank",
             },
         ],
     },
 ];
 
 export const Navigation: FC = () => {
-    const [currentlySelectedKey, setCurrentlySelectedKey] = useState<string>("home");
+    const [currentlySelectedKey, setCurrentlySelectedKey] = useState<string>("welcome");
+
+    const history = useHistory();
+    useEffect(() => history.push("/"), []);
 
     const onLinkClick = (event?: MouseEvent, item?: INavLink) => {
         event?.preventDefault();
 
         if (item?.key) {
             setCurrentlySelectedKey(item.key);
+            history.push(item.url);
         }
     };
 
