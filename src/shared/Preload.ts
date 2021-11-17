@@ -3,17 +3,20 @@ import { IpcRendererEvent } from "electron/common";
 import { Bridge } from "./Bridge";
 import { IpcChannel } from "./IpcChannel";
 
-const bridge: Bridge = {
+contextBridge.exposeInMainWorld("Bridge", <Bridge>{
     ipcRenderer: {
-        send: ipcRenderer.send,
-        sendSync: ipcRenderer.sendSync,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        on: (channel: IpcChannel, listener: (event: IpcRendererEvent, ...args: any[]) => void) =>
-            ipcRenderer.on(channel, listener),
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        once: (channel: IpcChannel, listener: (event: IpcRendererEvent, ...args: any[]) => void) =>
-            ipcRenderer.once(channel, listener),
-    },
-};
+        send: <T>(channel: IpcChannel, ...args: T[]) => ipcRenderer.send(channel.toString(), args),
 
-contextBridge.exposeInMainWorld("Bridge", bridge);
+        sendSync: <ArgumentType, ReturnType>(channel: IpcChannel, ...args: ArgumentType[]): ReturnType =>
+            ipcRenderer.sendSync(channel.toString(), args),
+
+        on: <T>(channel: IpcChannel, listener: (event: IpcRendererEvent, ...args: T[]) => void) =>
+            ipcRenderer.on(channel.toString(), listener),
+
+        once: <T>(channel: IpcChannel, listener: (event: IpcRendererEvent, ...args: T[]) => void) =>
+            ipcRenderer.once(channel.toString(), listener),
+
+        invoke: <ArgumentType, ReturnType>(channel: IpcChannel, ...args: ArgumentType[]): Promise<ReturnType> =>
+            ipcRenderer.invoke(channel.toString(), args),
+    },
+});

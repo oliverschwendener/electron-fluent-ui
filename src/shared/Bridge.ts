@@ -2,14 +2,11 @@ import { IpcRendererEvent } from "electron/common";
 import { IpcChannel } from "./IpcChannel";
 
 export interface IpcRendererBridge {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    readonly send: (channel: IpcChannel, ...arg: any) => void;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    readonly sendSync: (channel: IpcChannel, ...arg: any) => any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    readonly on: (channel: IpcChannel, listener: (event: IpcRendererEvent, ...arg: any) => void) => void;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    readonly once: (channel: IpcChannel, listener: (event: IpcRendererEvent, ...arg: any) => void) => void;
+    readonly send: <T>(channel: IpcChannel, ...arg: T[]) => void;
+    readonly sendSync: <ArgumentType, ReturnType>(channel: IpcChannel, ...arg: ArgumentType[]) => ReturnType;
+    readonly on: <T>(channel: IpcChannel, listener: (event: IpcRendererEvent, ...arg: T[]) => void) => void;
+    readonly once: <T>(channel: IpcChannel, listener: (event: IpcRendererEvent, ...arg: T[]) => void) => void;
+    readonly invoke: <ArgumentType, ReturnType>(channel: IpcChannel, ...arg: ArgumentType[]) => Promise<ReturnType>;
 }
 
 export interface Bridge {

@@ -4,7 +4,7 @@ import { join } from "path";
 export class WindowManager {
     private readonly preloadScriptFilePath: string;
     private readonly mainHtmlFilePath: string;
-    private mainWindow: null | BrowserWindow = null;
+    private mainWindow: BrowserWindow | null = null;
 
     public constructor() {
         this.preloadScriptFilePath = join(__dirname, "Preload.js");
