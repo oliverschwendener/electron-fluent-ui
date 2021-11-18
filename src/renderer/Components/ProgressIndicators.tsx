@@ -10,7 +10,7 @@ export const ProgressIndicators: FC = () => {
     });
 
     return (
-        <Stack padding={10} tokens={{ childrenGap: 20 }}>
+        <Stack tokens={{ childrenGap: 20 }}>
             <ProgressIndicator label="Example progress indicator" description="This is a description" />
             <ProgressIndicator
                 label="Example progress indicator"

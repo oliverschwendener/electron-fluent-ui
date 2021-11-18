@@ -18,7 +18,7 @@ export const Dialogs: FC = () => {
     );
 
     return (
-        <Stack padding={10}>
+        <Stack>
             <DefaultButton onClick={() => toggleHideDialog()}>Show Dialog</DefaultButton>
             <Dialog
                 hidden={hideDialog}

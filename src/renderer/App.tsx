@@ -39,13 +39,15 @@ export const App: FC<{ ipcRenderer: IpcRenderer }> = () => {
     };
 
     return (
-        <ThemeProvider theme={themeMapping[currentTheme]} applyTo="body">
+        <ThemeProvider theme={themeMapping[currentTheme]} applyTo="body" style={{ height: "100%" }}>
             <BrowserRouter>
                 <Stack horizontal verticalFill>
                     <StackItem verticalFill>
-                        <Navigation />
+                        <div style={{ height: "100%", overflow: "auto" }}>
+                            <Navigation />
+                        </div>
                     </StackItem>
-                    <StackItem grow={1}>
+                    <StackItem grow={1} tokens={{ padding: 20 }}>
                         <Route path="/" exact>
                             <Welcome currentTheme={currentTheme} onThemeChange={changeTheme} />
                         </Route>

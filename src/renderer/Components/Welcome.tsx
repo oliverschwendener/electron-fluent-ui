@@ -25,7 +25,7 @@ export const Welcome: FC<Props> = ({ currentTheme, onThemeChange }) => {
     };
 
     return (
-        <Stack padding={10} tokens={{ childrenGap: 10 }} verticalFill verticalAlign="center">
+        <Stack tokens={{ childrenGap: 10 }} verticalFill verticalAlign="center">
             <StackItem align="center">
                 <Text variant="xxLarge">Welcome to electron/fluent-ui!</Text>
             </StackItem>

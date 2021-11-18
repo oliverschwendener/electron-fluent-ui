@@ -6,7 +6,7 @@ export const Panels: FC = () => {
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
 
     return (
-        <Stack tokens={{ childrenGap: 10, padding: 20 }}>
+        <Stack tokens={{ childrenGap: 10 }}>
             <DefaultButton onClick={openPanel}>Open panel</DefaultButton>
             <Panel
                 isLightDismiss

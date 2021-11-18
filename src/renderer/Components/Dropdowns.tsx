@@ -2,7 +2,7 @@ import { Dropdown, Stack } from "@fluentui/react";
 import React, { FC } from "react";
 
 export const Dropdowns: FC = () => (
-    <Stack padding={10}>
+    <Stack>
         <Dropdown
             label="This is an example"
             options={[
