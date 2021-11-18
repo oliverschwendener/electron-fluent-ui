@@ -3,21 +3,21 @@ import { Theme as FluentUiTheme, ThemeProvider } from "@fluentui/react/lib/Theme
 import { IpcRenderer } from "electron";
 import React, { FC, useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { Buttons } from "./Buttons";
-import { Checkboxes } from "./Checkboxes";
-import { Choicegroup } from "./Choicegroup";
-import { Dialogs } from "./Dialogs";
-import { Dropdowns } from "./Dropdowns";
-import { Navigation } from "./Navigation";
-import { Panels } from "./Panels";
-import { ProgressIndicators } from "./ProgressIndicators";
-import { Sliders } from "./Sliders";
-import { Spinners } from "./Spinners";
-import { TextFields } from "./TextFields";
+import { Buttons } from "./Components/Buttons";
+import { Checkboxes } from "./Components/Checkboxes";
+import { Choicegroup } from "./Components/Choicegroup";
+import { Dialogs } from "./Components/Dialogs";
+import { Dropdowns } from "./Components/Dropdowns";
+import { Navigation } from "./Components/Navigation";
+import { Panels } from "./Components/Panels";
+import { ProgressIndicators } from "./Components/ProgressIndicators";
+import { Sliders } from "./Components/Sliders";
+import { Spinners } from "./Components/Spinners";
+import { TextFields } from "./Components/TextFields";
+import { Toggles } from "./Components/Toggles";
+import { Welcome } from "./Components/Welcome";
 import { Theme } from "./Theme";
 import { UeliColorThemes } from "./Themes";
-import { Toggles } from "./Toggles";
-import { Welcome } from "./Welcome";
 
 export const App: FC<{ ipcRenderer: IpcRenderer }> = () => {
     initializeIcons();
