@@ -1,5 +1,6 @@
 {
     "name": "ueli-fluent-ui",
+    "description": "Quickstart repository for electron applications using Fluent UI",
     "version": "0.2.1",
     "main": "bundle/Main.js",
     "license": "MIT",
