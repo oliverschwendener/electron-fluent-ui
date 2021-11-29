@@ -1,3 +1,5 @@
+productName: ElectronFluentUi
+
 directories:
     output: dist
     buildResources: bundle
