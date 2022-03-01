@@ -1,6 +1,6 @@
 import { INavLink, INavLinkGroup, Nav } from "@fluentui/react/lib/Nav";
 import React, { FC, MouseEvent, useEffect, useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 
 const navLinkGroups: INavLinkGroup[] = [
     {
@@ -35,15 +35,15 @@ const navLinkGroups: INavLinkGroup[] = [
 export const Navigation: FC = () => {
     const [currentlySelectedKey, setCurrentlySelectedKey] = useState<string>("welcome");
 
-    const history = useHistory();
-    useEffect(() => history.push("/"), []);
+    const navigate = useNavigate();
+    useEffect(() => navigate({ pathname: "/" }), []);
 
     const onLinkClick = (event?: MouseEvent, item?: INavLink) => {
         event?.preventDefault();
 
         if (item?.key) {
             setCurrentlySelectedKey(item.key);
-            history.push(item.url);
+            navigate({ pathname: item.url });
         }
     };
 

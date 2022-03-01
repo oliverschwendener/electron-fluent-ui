@@ -2,7 +2,7 @@ import { initializeIcons, Stack, StackItem } from "@fluentui/react";
 import { Theme as FluentUiTheme, ThemeProvider } from "@fluentui/react/lib/Theme";
 import { IpcRenderer } from "electron";
 import React, { FC, useState } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Buttons } from "./Components/Buttons";
 import { Checkboxes } from "./Components/Checkboxes";
 import { Choicegroup } from "./Components/Choicegroup";
@@ -48,42 +48,23 @@ export const App: FC<{ ipcRenderer: IpcRenderer }> = () => {
                         </div>
                     </StackItem>
                     <StackItem grow={1} tokens={{ padding: 20 }}>
-                        <Route path="/" exact>
-                            <Welcome currentTheme={currentTheme} onThemeChange={changeTheme} />
-                        </Route>
-                        <Route path="/button" exact>
-                            <Buttons />
-                        </Route>
-                        <Route path="/checkbox" exact>
-                            <Checkboxes />
-                        </Route>
-                        <Route path="/choicegroup" exact>
-                            <Choicegroup />
-                        </Route>
-                        <Route path="/dropdown" exact>
-                            <Dropdowns />
-                        </Route>
-                        <Route path="/progress" exact>
-                            <ProgressIndicators />
-                        </Route>
-                        <Route path="/dialog" exact>
-                            <Dialogs />
-                        </Route>
-                        <Route path="/text-field" exact>
-                            <TextFields />
-                        </Route>
-                        <Route path="/toggle" exact>
-                            <Toggles />
-                        </Route>
-                        <Route path="/slider" exact>
-                            <Sliders />
-                        </Route>
-                        <Route path="/spinner" exact>
-                            <Spinners />
-                        </Route>
-                        <Route path="/panel" exact>
-                            <Panels />
-                        </Route>
+                        <Routes>
+                            <Route
+                                path="/"
+                                element={<Welcome currentTheme={currentTheme} onThemeChange={changeTheme} />}
+                            />
+                            <Route path="/button" element={<Buttons />} />
+                            <Route path="/checkbox" element={<Checkboxes />} />
+                            <Route path="/choicegroup" element={<Choicegroup />} />
+                            <Route path="/dropdown" element={<Dropdowns />} />
+                            <Route path="/progress" element={<ProgressIndicators />} />
+                            <Route path="/dialog" element={<Dialogs />} />
+                            <Route path="/text-field" element={<TextFields />} />
+                            <Route path="/toggle" element={<Toggles />} />
+                            <Route path="/slider" element={<Sliders />} />
+                            <Route path="/spinner" element={<Spinners />} />
+                            <Route path="/panel" element={<Panels />} />
+                        </Routes>
                     </StackItem>
                 </Stack>
             </BrowserRouter>
