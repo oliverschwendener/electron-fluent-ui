@@ -2,7 +2,7 @@ import { initializeIcons, Stack, StackItem } from "@fluentui/react";
 import { Theme as FluentUiTheme, ThemeProvider } from "@fluentui/react/lib/Theme";
 import { IpcRenderer } from "electron";
 import React, { FC, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Buttons } from "./Components/Buttons";
 import { Checkboxes } from "./Components/Checkboxes";
 import { Choicegroup } from "./Components/Choicegroup";
@@ -40,7 +40,7 @@ export const App: FC<{ ipcRenderer: IpcRenderer }> = () => {
 
     return (
         <ThemeProvider theme={themeMapping[currentTheme]} applyTo="body" style={{ height: "100%" }}>
-            <BrowserRouter>
+            <HashRouter>
                 <Stack horizontal verticalFill>
                     <StackItem verticalFill>
                         <div style={{ height: "100%", overflow: "auto" }}>
@@ -67,7 +67,7 @@ export const App: FC<{ ipcRenderer: IpcRenderer }> = () => {
                         </Routes>
                     </StackItem>
                 </Stack>
-            </BrowserRouter>
+            </HashRouter>
         </ThemeProvider>
     );
 };
