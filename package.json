@@ -44,5 +44,8 @@
         "start": "./node_modules/.bin/electron .",
         "package": "node_modules/.bin/electron-builder --config electron-builder-config.yml",
         "package:publish": "yarn package --publish always"
+    },
+    "dependencies": {
+        "office-ui-fabric-core": "^11.0.0"
     }
 }
