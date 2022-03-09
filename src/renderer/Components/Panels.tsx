@@ -1,6 +1,6 @@
 import { DefaultButton, Panel, Stack, Text } from "@fluentui/react";
-import { useBoolean } from "@fluentui/react-hooks";
 import React, { FC } from "react";
+import { useBoolean } from "@fluentui/react-hooks";
 
 export const Panels: FC = () => {
     const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);

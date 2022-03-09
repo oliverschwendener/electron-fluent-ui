@@ -1,7 +1,8 @@
 {
     "root": true,
     "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": 0
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "sort-imports": "error"
     },
     "plugins": ["@typescript-eslint"],
     "extends": [

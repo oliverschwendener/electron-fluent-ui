@@ -1,7 +1,7 @@
+import { App } from "./App";
+import { IpcChannel } from "../shared/IpcChannel";
 import React from "react";
 import { render } from "react-dom";
-import { IpcChannel } from "../shared/IpcChannel";
-import { App } from "./App";
 
 window.ipcRenderer.send(IpcChannel.rendererStarted);
 

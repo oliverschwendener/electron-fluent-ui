@@ -1,5 +1,5 @@
-import { Stack, Toggle } from "@fluentui/react";
 import React, { FC } from "react";
+import { Stack, Toggle } from "@fluentui/react";
 
 export const Toggles: FC = () => (
     <Stack tokens={{ childrenGap: 10 }}>
