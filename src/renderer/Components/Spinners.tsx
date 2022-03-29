@@ -1,5 +1,5 @@
-import { Spinner, SpinnerSize, Stack } from "@fluentui/react";
 import React, { FC } from "react";
+import { Spinner, SpinnerSize, Stack } from "@fluentui/react";
 
 export const Spinners: FC = () => (
     <Stack tokens={{ childrenGap: 20 }}>

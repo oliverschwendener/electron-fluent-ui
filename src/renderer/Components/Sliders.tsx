@@ -1,5 +1,5 @@
-import { Slider, Stack } from "@fluentui/react";
 import React, { FC } from "react";
+import { Slider, Stack } from "@fluentui/react";
 
 export const Sliders: FC = () => (
     <Stack>
