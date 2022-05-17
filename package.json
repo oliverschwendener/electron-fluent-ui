@@ -1,7 +1,7 @@
 {
     "name": "electron-fluent-ui",
     "description": "Quickstart repository for electron applications using Fluent UI",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "main": "bundle/Main.js",
     "license": "MIT",
     "author": {
