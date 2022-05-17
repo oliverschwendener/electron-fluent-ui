@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "jsx": "react",
+        "jsx": "react-jsx",
         "target": "ES2021",
         "module": "commonjs",
         "strict": true,
@@ -8,6 +8,5 @@
         "forceConsistentCasingInFileNames": true,
         "allowSyntheticDefaultImports": true
     },
-    "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-    "exclude": ["node_modules"]
+    "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }

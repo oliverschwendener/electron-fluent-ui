@@ -1,5 +1,5 @@
-import { INavLink, INavLinkGroup, Nav } from "@fluentui/react/lib/Nav";
-import React, { FC, MouseEvent, useEffect, useState } from "react";
+import { INavLink, INavLinkGroup, Nav } from "@fluentui/react";
+import { FC, MouseEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 const navLinkGroups: INavLinkGroup[] = [

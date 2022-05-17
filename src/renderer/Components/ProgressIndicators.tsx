@@ -1,5 +1,5 @@
 import { ProgressIndicator, Stack } from "@fluentui/react";
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 export const ProgressIndicators: FC = () => {
     const [progress, setProgress] = useState(0);

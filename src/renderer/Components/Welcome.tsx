@@ -1,5 +1,5 @@
 import { Dropdown, IDropdownOption, Stack, StackItem, Text } from "@fluentui/react";
-import React, { FC } from "react";
+import { FC } from "react";
 import { FormEvent } from "react-router/node_modules/@types/react";
 import { Theme } from "../Theme";
 

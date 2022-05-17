@@ -1,23 +1,23 @@
-import { Theme as FluentUiTheme, ThemeProvider } from "@fluentui/react/lib/Theme";
+import { initializeIcons, Stack, StackItem } from "@fluentui/react";
+import { Theme as FluentUiTheme, ThemeProvider } from "@fluentui/react";
+import { IpcRenderer } from "electron";
+import { FC, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import React, { FC, useState } from "react";
-import { Stack, StackItem, initializeIcons } from "@fluentui/react";
 import { Buttons } from "./Components/Buttons";
 import { Checkboxes } from "./Components/Checkboxes";
 import { Choicegroup } from "./Components/Choicegroup";
 import { Dialogs } from "./Components/Dialogs";
 import { Dropdowns } from "./Components/Dropdowns";
-import { IpcRenderer } from "electron";
 import { Navigation } from "./Components/Navigation";
 import { Panels } from "./Components/Panels";
 import { ProgressIndicators } from "./Components/ProgressIndicators";
 import { Sliders } from "./Components/Sliders";
 import { Spinners } from "./Components/Spinners";
 import { TextFields } from "./Components/TextFields";
-import { Theme } from "./Theme";
 import { Toggles } from "./Components/Toggles";
-import { UeliColorThemes } from "./Themes";
 import { Welcome } from "./Components/Welcome";
+import { Theme } from "./Theme";
+import { UeliColorThemes } from "./Themes";
 
 export const App: FC<{ ipcRenderer: IpcRenderer }> = () => {
     initializeIcons();

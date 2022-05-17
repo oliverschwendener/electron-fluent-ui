@@ -1,5 +1,5 @@
 import { Dropdown, Stack } from "@fluentui/react";
-import React, { FC } from "react";
+import { FC } from "react";
 
 export const Dropdowns: FC = () => (
     <Stack>

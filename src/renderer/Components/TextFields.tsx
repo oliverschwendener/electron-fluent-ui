@@ -1,5 +1,5 @@
-import React, { FC } from "react";
 import { Stack, TextField } from "@fluentui/react";
+import { FC } from "react";
 
 export const TextFields: FC = () => (
     <Stack>

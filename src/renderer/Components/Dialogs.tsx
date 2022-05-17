@@ -1,6 +1,6 @@
 import { DefaultButton, Dialog, DialogFooter, DialogType, PrimaryButton, Stack } from "@fluentui/react";
-import React, { FC, useMemo } from "react";
 import { useBoolean, useId } from "@fluentui/react-hooks";
+import { FC, useMemo } from "react";
 
 export const Dialogs: FC = () => {
     const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);

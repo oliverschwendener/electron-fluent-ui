@@ -1,5 +1,5 @@
 import { ChoiceGroup, IChoiceGroupOption, Stack } from "@fluentui/react";
-import React, { FC } from "react";
+import { FC } from "react";
 
 export const Choicegroup: FC = () => {
     const choiceGroupOptions: IChoiceGroupOption[] = [

@@ -1,5 +1,5 @@
 import { Checkbox, Stack } from "@fluentui/react";
-import React, { FC } from "react";
+import { FC } from "react";
 
 export const Checkboxes: FC = () => (
     <Stack horizontal={false} tokens={{ childrenGap: 10 }}>
