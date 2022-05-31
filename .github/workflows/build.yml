@@ -1,9 +1,6 @@
-name: Build and publish
+name: Build
 
-on:
-    push:
-        tags:
-            - "*"
+on: [push, pull_request]
 
 jobs:
     tests:
@@ -38,6 +35,7 @@ jobs:
                   NODE_ENV: production
 
             - name: Package and publish app
+              if: startsWith(github.ref, 'refs/tags')
               run: yarn package:publish
               env:
                   CI: true
