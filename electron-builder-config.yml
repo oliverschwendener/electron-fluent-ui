@@ -37,8 +37,10 @@ mac:
     publish:
         - github
     target:
-        - dmg
-        - zip
+        - target: dmg
+          arch: universal
+        - target: zip
+          arch: universal
 
 linux:
     icon: build/app-icon.png
