@@ -1,9 +1,13 @@
-import { DefaultButton, PrimaryButton, Stack } from "@fluentui/react";
+import { Button } from "@fluentui/react-button";
 import { FC } from "react";
 
-export const Buttons: FC = () => (
-    <Stack horizontal tokens={{ childrenGap: 10 }}>
-        <DefaultButton>Default</DefaultButton>
-        <PrimaryButton>Primary</PrimaryButton>
-    </Stack>
-);
+export const Buttons: FC = () => {
+    return (
+        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            <Button appearance="outline">Outline button</Button>
+            <Button appearance="primary">Primary button</Button>
+            <Button appearance="secondary">Secondary button</Button>
+            <Button appearance="subtle">Subtle button</Button>
+        </div>
+    );
+};
