@@ -19,7 +19,7 @@ import { Welcome } from "./Components/Welcome";
 import { Theme } from "./Theme";
 import { UeliColorThemes } from "./Themes";
 
-export const App: FC<{ ipcRenderer: IpcRenderer }> = () => {
+export const App: FC = () => {
     initializeIcons();
 
     const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.UeliDark);
