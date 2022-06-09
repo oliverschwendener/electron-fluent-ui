@@ -9,9 +9,7 @@
         "name": "Oliver Schwendener",
         "url": "https://github.com/oliverschwendener"
     },
-    "dependencies": {
-        "office-ui-fabric-core": "^11.0.0"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@babel/cli": "^7.17.10",
         "@babel/core": "^7.17.12",

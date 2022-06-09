@@ -4736,11 +4736,6 @@ object.assign@^4.1.0:
     has-symbols "^1.0.1"
     object-keys "^1.1.1"
 
-office-ui-fabric-core@^11.0.0:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-core/-/office-ui-fabric-core-11.0.1.tgz#f4769680afae49f067ab4d177c985fc4727a55d4"
-  integrity sha512-jcfycbVOm2aUoI+AGtHW24HvM7nUVFr44hR5NIE56EobK67bVwbNAQL15CJj3vNz5PBrnitsV9ROOB+KOEWn8g==
-
 once@^1.3.0, once@^1.3.1, once@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
