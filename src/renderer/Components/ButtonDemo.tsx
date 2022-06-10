@@ -1,9 +1,9 @@
 import { Button } from "@fluentui/react-button";
 import { FC } from "react";
 
-export const Buttons: FC = () => {
+export const ButtonDemo: FC = () => {
     return (
-        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+        <div style={{ display: "flex", gap: 20 }}>
             <Button appearance="outline">Outline button</Button>
             <Button appearance="primary">Primary button</Button>
             <Button appearance="secondary">Secondary button</Button>

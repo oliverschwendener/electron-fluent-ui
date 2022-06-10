@@ -1,7 +1,7 @@
 import { Input, Label } from "@fluentui/react-components";
 import { FC, useState } from "react";
 
-export const TextInput: FC = () => {
+export const InputDemo: FC = () => {
     const [textValue, setTextValue] = useState<string>("");
 
     return (

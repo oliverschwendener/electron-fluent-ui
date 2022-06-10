@@ -21,7 +21,14 @@ interface Props {
 }
 
 export const Navigation: FC<Props> = ({ currentColorThemeName, changeColorTheme, routes }) => {
-    const colorThemeNames: ColorThemeName[] = ["Web Light", "Web Dark", "Teams Light", "Teams Dark"];
+    const colorThemeNames: ColorThemeName[] = [
+        "Web Light",
+        "Web Dark",
+        "Teams Light",
+        "Teams Dark",
+        "Teams High Contrast",
+    ];
+
     const [currentPath, setCurrentPath] = useState<string>("/");
     const navigate = useNavigate();
 
