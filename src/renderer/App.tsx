@@ -1,6 +1,7 @@
 import { FluentProvider } from "@fluentui/react-components";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
+import { IpcChannel } from "../shared/IpcChannel";
 import { AppRoute } from "./AppRoute";
 import { ColorThemeName, getTheme } from "./ColorThemes";
 import { AccordionDemo } from "./Components/AccordionDemo";
@@ -17,6 +18,8 @@ import { Welcome } from "./Components/Welcome";
 export const App: FC = () => {
     const defaultColorThemeName: ColorThemeName = "Web Light";
     const [currentColorThemeName, setCurrentColorThemeName] = useState<ColorThemeName>(defaultColorThemeName);
+
+    useEffect(() => window.ipcRenderer.send(IpcChannel.reactAppStarted), []);
 
     const routes: AppRoute[] = [
         { label: "Welcome", path: "/", element: <Welcome /> },

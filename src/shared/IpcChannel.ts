@@ -1,3 +1,3 @@
 export enum IpcChannel {
-    rendererStarted = "rendererStarted",
+    reactAppStarted = "reactAppStarted",
 }
