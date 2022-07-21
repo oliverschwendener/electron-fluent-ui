@@ -1,58 +1,71 @@
-import { INavLink, INavLinkGroup, Nav } from "@fluentui/react";
-import { FC, MouseEvent, useEffect, useState } from "react";
+import {
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuList,
+    MenuPopover,
+    MenuTrigger,
+    Tab,
+    TabList,
+    Title1,
+} from "@fluentui/react-components";
+import { FC, useState } from "react";
 import { useNavigate } from "react-router";
+import { ColorThemeName } from "../ColorThemes";
+import { AppRoute } from "../AppRoute";
 
-const navLinkGroups: INavLinkGroup[] = [
-    {
-        links: [
-            {
-                name: "Welcome",
-                key: "welcome",
-                url: "/",
-            },
-            {
-                name: "Basic Inputs",
-                key: "basic-inputs",
-                url: "/basic-inputs",
-                links: [
-                    { name: "Button", key: "button", url: "/button" },
-                    { name: "Checkbox", key: "checkbox", url: "/checkbox" },
-                    { name: "Choicegroup", key: "choicegroup", url: "/choicegroup" },
-                    { name: "Dropdown", key: "dropdown", url: "/dropdown" },
-                    { name: "Progress", key: "progress", url: "/progress" },
-                    { name: "Dialog", key: "Dialog", url: "/dialog" },
-                    { name: "Text field", key: "Text field", url: "/text-field" },
-                    { name: "Toggle", key: "Toggle", url: "/toggle" },
-                    { name: "Slider", key: "Slider", url: "/slider" },
-                    { name: "Spinner", key: "Spinner", url: "/spinner" },
-                    { name: "Panel", key: "Panel", url: "/panel" },
-                ],
-            },
-        ],
-    },
-];
+interface Props {
+    currentColorThemeName: string;
+    changeColorTheme: (colorThemeName: ColorThemeName) => void;
+    routes: AppRoute[];
+}
 
-export const Navigation: FC = () => {
-    const [currentlySelectedKey, setCurrentlySelectedKey] = useState<string>("welcome");
+export const Navigation: FC<Props> = ({ currentColorThemeName, changeColorTheme, routes }) => {
+    const colorThemeNames: ColorThemeName[] = [
+        "Web Light",
+        "Web Dark",
+        "Teams Light",
+        "Teams Dark",
+        "Teams High Contrast",
+    ];
 
+    const [currentPath, setCurrentPath] = useState<string>("/");
     const navigate = useNavigate();
-    useEffect(() => navigate({ pathname: "/" }), []);
 
-    const onLinkClick = (event?: MouseEvent, item?: INavLink) => {
-        event?.preventDefault();
-
-        if (item?.key) {
-            setCurrentlySelectedKey(item.key);
-            navigate({ pathname: item.url });
-        }
+    const navigateTo = (path: string) => {
+        setCurrentPath(path);
+        navigate({ pathname: path });
     };
 
     return (
-        <Nav
-            onLinkClick={onLinkClick}
-            selectedKey={currentlySelectedKey}
-            ariaLabel="Nav basic example"
-            groups={navLinkGroups}
-        />
+        <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+            <Title1>FluentUI 9</Title1>
+            <TabList
+                style={{ flexGrow: 1 }}
+                onTabSelect={(_, { value }) => {
+                    if (typeof value === "string") {
+                        navigateTo(value);
+                    }
+                }}
+                selectedValue={currentPath}
+                vertical
+            >
+                {routes.map(({ path, label }) => (
+                    <Tab value={path}>{label}</Tab>
+                ))}
+            </TabList>
+            <Menu>
+                <MenuTrigger>
+                    <MenuButton>{currentColorThemeName}</MenuButton>
+                </MenuTrigger>
+                <MenuPopover>
+                    <MenuList>
+                        {colorThemeNames.map((colorThemeName) => (
+                            <MenuItem onClick={() => changeColorTheme(colorThemeName)}>{colorThemeName}</MenuItem>
+                        ))}
+                    </MenuList>
+                </MenuPopover>
+            </Menu>
+        </div>
     );
 };

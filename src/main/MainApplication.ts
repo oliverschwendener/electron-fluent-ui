@@ -19,6 +19,6 @@ export class MainApplication {
     }
 
     private registerIpcEventListeners(): void {
-        this.ipcMain.on(IpcChannel.rendererStarted, () => console.log("Renderer started"));
+        this.ipcMain.on(IpcChannel.reactAppStarted, () => console.log("React app started"));
     }
 }
