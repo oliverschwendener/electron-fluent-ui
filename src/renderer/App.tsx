@@ -1,19 +1,30 @@
 import { FluentProvider } from "@fluentui/react-components";
+import {
+    Desktop24Regular,
+    Bluetooth24Regular,
+    Wifi120Regular,
+    DrawImage24Regular,
+    Apps24Regular,
+    Person24Regular,
+    GlobeClock24Regular,
+    Games24Regular,
+    Accessibility24Regular,
+} from "@fluentui/react-icons";
 import { FC, useEffect, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { IpcChannel } from "../shared/IpcChannel";
 import { AppRoute } from "./AppRoute";
 import { ColorThemeName, getTheme } from "./ColorThemes";
-import { AccordionDemo } from "./Components/AccordionDemo";
-import { ButtonDemo } from "./Components/ButtonDemo";
-import { CheckBoxDemo } from "./Components/CheckboxDemo";
-import { CompoundButtonDemo } from "./Components/CompoundButtonDemo";
-import { InputDemo } from "./Components/InputDemo";
+import { BluetoothAndDevices } from "./Components/BluetoothAndDevices";
+import { NetworkAndInternet } from "./Components/NetworkAndInternet";
+import { Personalization } from "./Components/Personalization";
+import { Apps } from "./Components/Apps";
+import { Accounts } from "./Components/Accounts";
 import { Navigation } from "./Components/Navigation";
-import { SliderDemo } from "./Components/SliderDemo";
-import { SpinnerDemo } from "./Components/SpinnerDemo";
-import { SwitchDemo } from "./Components/SwitchDemo";
-import { Welcome } from "./Components/Welcome";
+import { TimeAndLanguage } from "./Components/TimeAndLanguage";
+import { Gaming } from "./Components/Gaming";
+import { Accessbility } from "./Components/Accessbility";
+import { System } from "./Components/System";
 
 export const App: FC = () => {
     const defaultColorThemeName: ColorThemeName = "Web Light";
@@ -22,15 +33,40 @@ export const App: FC = () => {
     useEffect(() => window.ipcRenderer.send(IpcChannel.reactAppStarted), []);
 
     const routes: AppRoute[] = [
-        { label: "Welcome", path: "/", element: <Welcome /> },
-        { label: "Accordion", path: "/accordion", element: <AccordionDemo /> },
-        { label: "Buttons", path: "/buttons", element: <ButtonDemo /> },
-        { label: "Checkboxes", path: "/checkboxes", element: <CheckBoxDemo /> },
-        { label: "Compound Buttons", path: "/compound-buttons", element: <CompoundButtonDemo /> },
-        { label: "Input", path: "/inputs", element: <InputDemo /> },
-        { label: "Sliders", path: "/sliders", element: <SliderDemo /> },
-        { label: "Spinners", path: "/spinners", element: <SpinnerDemo /> },
-        { label: "Switch", path: "/switch", element: <SwitchDemo /> },
+        { label: "System", path: "/system", element: <System />, icon: <Desktop24Regular /> },
+        {
+            label: "Bluetooth & devices",
+            path: "/bluetooth-and-devices",
+            element: <BluetoothAndDevices />,
+            icon: <Bluetooth24Regular />,
+        },
+        {
+            label: "Network & internet",
+            path: "/network-and-internet",
+            element: <NetworkAndInternet />,
+            icon: <Wifi120Regular />,
+        },
+        {
+            label: "Personalization",
+            path: "/personalization",
+            element: <Personalization />,
+            icon: <DrawImage24Regular />,
+        },
+        {
+            label: "Apps",
+            path: "/apps",
+            element: <Apps />,
+            icon: <Apps24Regular />,
+        },
+        { label: "Accounts", path: "/accounts", element: <Accounts />, icon: <Person24Regular /> },
+        {
+            label: "Time & language",
+            path: "/time-and-language",
+            element: <TimeAndLanguage />,
+            icon: <GlobeClock24Regular />,
+        },
+        { label: "Gaming", path: "/gaming", element: <Gaming />, icon: <Games24Regular /> },
+        { label: "Accessbility", path: "/accessbility", element: <Accessbility />, icon: <Accessibility24Regular /> },
     ];
 
     return (
