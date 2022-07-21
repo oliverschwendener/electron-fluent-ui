@@ -33,7 +33,7 @@ export const App: FC = () => {
     useEffect(() => window.ipcRenderer.send(IpcChannel.reactAppStarted), []);
 
     const routes: AppRoute[] = [
-        { label: "System", path: "/system", element: <System />, icon: <Desktop24Regular /> },
+        { label: "System", path: "/", element: <System />, icon: <Desktop24Regular /> },
         {
             label: "Bluetooth & devices",
             path: "/bluetooth-and-devices",
