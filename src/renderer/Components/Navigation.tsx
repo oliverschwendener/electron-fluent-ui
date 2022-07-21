@@ -1,22 +1,19 @@
 import {
-    Avatar,
-    Body1,
-    Input,
     Menu,
     MenuButton,
     MenuItem,
     MenuList,
     MenuPopover,
     MenuTrigger,
-    Subtitle2,
     Tab,
     TabList,
 } from "@fluentui/react-components";
-import { Search20Regular } from "@fluentui/react-icons";
 import { FC, useState } from "react";
 import { useNavigate } from "react-router";
 import { ColorThemeName } from "../ColorThemes";
 import { AppRoute } from "../AppRoute";
+import { NavigationHeaderUserAvatar } from "./NavigationHeaderUserAvatar";
+import { NavigationHeaderSearch } from "./NavigationHeaderSearch";
 
 interface Props {
     currentColorThemeName: string;
@@ -43,24 +40,8 @@ export const Navigation: FC<Props> = ({ currentColorThemeName, changeColorTheme,
 
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-            <div style={{ display: "flex", flexDirection: "row", gap: 10 }}>
-                <div>
-                    <Avatar
-                        size={64}
-                        name="Katri Athokas"
-                        image={{
-                            src: "https://fabricweb.azureedge.net/fabric-website/assets/images/avatar/KatriAthokas.jpg",
-                        }}
-                    />
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <Subtitle2>Katri Athokas</Subtitle2>
-                    <Body1>katri.athokas@outlook.com</Body1>
-                </div>
-            </div>
-            <div style={{ marginTop: 20, marginBottom: 20 }}>
-                <Input contentAfter={<Search20Regular aria-label="Enter by voice" />} placeholder="Search" />
-            </div>
+            <NavigationHeaderUserAvatar />
+            <NavigationHeaderSearch />
             <TabList
                 style={{ flexGrow: 1 }}
                 onTabSelect={(_, { value }) => {
