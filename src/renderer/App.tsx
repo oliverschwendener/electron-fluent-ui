@@ -9,6 +9,8 @@ import {
     GlobeClock24Regular,
     Games24Regular,
     Accessibility24Regular,
+    Shield24Regular,
+    ArrowSyncCircle24Filled,
 } from "@fluentui/react-icons";
 import { FC, useEffect, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
@@ -25,6 +27,8 @@ import { TimeAndLanguage } from "./Components/TimeAndLanguage";
 import { Gaming } from "./Components/Gaming";
 import { Accessbility } from "./Components/Accessbility";
 import { System } from "./Components/System";
+import { PrivacyAndSecurity } from "./Components/PrivacyAndSecurity";
+import { WindowsUpdate } from "./Components/WindowsUpdate";
 
 export const App: FC = () => {
     const defaultColorThemeName: ColorThemeName = "Web Light";
@@ -67,6 +71,18 @@ export const App: FC = () => {
         },
         { label: "Gaming", path: "/gaming", element: <Gaming />, icon: <Games24Regular /> },
         { label: "Accessbility", path: "/accessbility", element: <Accessbility />, icon: <Accessibility24Regular /> },
+        {
+            label: "Privacy & security",
+            path: "/privacy-and-security",
+            element: <PrivacyAndSecurity />,
+            icon: <Shield24Regular />,
+        },
+        {
+            label: "Windows Update",
+            path: "/windows-update",
+            element: <WindowsUpdate />,
+            icon: <ArrowSyncCircle24Filled />,
+        },
     ];
 
     return (
@@ -79,7 +95,7 @@ export const App: FC = () => {
                     boxSizing: "border-box",
                 }}
             >
-                <div style={{ display: "flex", flexDirection: "row", gap: 20, height: "100%" }}>
+                <div style={{ display: "flex", flexDirection: "row", gap: 40, height: "100%" }}>
                     <div style={{ height: "100%", flexShrink: 0 }}>
                         <Navigation
                             currentColorThemeName={currentColorThemeName}
