@@ -1,0 +1,11 @@
+export { Accessbility } from "./Accessbility";
+export { Accounts } from "./Accounts";
+export { Apps } from "./Apps";
+export { BluetoothAndDevices } from "./BluetoothAndDevices";
+export { Gaming } from "./Gaming";
+export { NetworkAndInternet } from "./NetworkAndInternet";
+export { Personalization } from "./Personalization";
+export { PrivacyAndSecurity } from "./PrivacyAndSecurity";
+export { System } from "./System";
+export { TimeAndLanguage } from "./TimeAndLanguage";
+export { WindowsUpdate } from "./WindowsUpdate";

@@ -1,34 +1,36 @@
 import { FluentProvider } from "@fluentui/react-components";
 import {
-    Desktop24Regular,
-    Bluetooth24Regular,
-    Wifi120Regular,
-    DrawImage24Regular,
-    Apps24Regular,
-    Person24Regular,
-    GlobeClock24Regular,
-    Games24Regular,
     Accessibility24Regular,
-    Shield24Regular,
+    Apps24Regular,
     ArrowSyncCircle24Filled,
+    Bluetooth24Regular,
+    Desktop24Regular,
+    DrawImage24Regular,
+    Games24Regular,
+    GlobeClock24Regular,
+    Person24Regular,
+    Shield24Regular,
+    Wifi120Regular,
 } from "@fluentui/react-icons";
 import { FC, useEffect, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { IpcChannel } from "../shared/IpcChannel";
 import { AppRoute } from "./AppRoute";
 import { ColorThemeName, getTheme } from "./ColorThemes";
-import { BluetoothAndDevices } from "./Components/BluetoothAndDevices";
-import { NetworkAndInternet } from "./Components/NetworkAndInternet";
-import { Personalization } from "./Components/Personalization";
-import { Apps } from "./Components/Apps";
-import { Accounts } from "./Components/Accounts";
 import { Navigation } from "./Components/Navigation";
-import { TimeAndLanguage } from "./Components/TimeAndLanguage";
-import { Gaming } from "./Components/Gaming";
-import { Accessbility } from "./Components/Accessbility";
-import { System } from "./Components/System";
-import { PrivacyAndSecurity } from "./Components/PrivacyAndSecurity";
-import { WindowsUpdate } from "./Components/WindowsUpdate";
+import {
+    Accessbility,
+    Accounts,
+    Apps,
+    BluetoothAndDevices,
+    Gaming,
+    NetworkAndInternet,
+    Personalization,
+    PrivacyAndSecurity,
+    System,
+    TimeAndLanguage,
+    WindowsUpdate,
+} from "./Components/Pages";
 
 export const App: FC = () => {
     const defaultColorThemeName: ColorThemeName = "Web Light";
