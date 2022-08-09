@@ -1,7 +1,7 @@
-import { IpcRenderer } from "electron";
+import { Bridge } from "./Bridge";
 
 declare global {
     interface Window {
-        ipcRenderer: IpcRenderer;
+        Bridge: Bridge;
     }
 }

@@ -16,7 +16,7 @@ import { FC, useEffect, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { IpcChannel } from "../shared/IpcChannel";
 import { AppRoute } from "./AppRoute";
-import { ColorThemeName, getTheme } from "./ColorThemes";
+import { ColorThemeName, getDefaultColorThemeName, getTheme, shouldUseDarkColors } from "./ColorThemes";
 import { Navigation } from "./Components/Navigation";
 import {
     Accessbility,
@@ -33,10 +33,15 @@ import {
 } from "./Components/Pages";
 
 export const App: FC = () => {
-    const defaultColorThemeName: ColorThemeName = "Web Light";
+    const defaultColorThemeName = getDefaultColorThemeName();
     const [currentColorThemeName, setCurrentColorThemeName] = useState<ColorThemeName>(defaultColorThemeName);
 
-    useEffect(() => window.ipcRenderer.send(IpcChannel.reactAppStarted), []);
+    useEffect(() => {
+        window.Bridge.send(IpcChannel.reactAppStarted);
+        window.Bridge.on<{ shouldUseDarkColors: boolean }>(IpcChannel.nativeThemeChanged, () =>
+            setCurrentColorThemeName(shouldUseDarkColors() ? "Web Dark" : "Web Light")
+        );
+    }, []);
 
     const routes: AppRoute[] = [
         { label: "System", path: "/", element: <System />, icon: <Desktop24Regular /> },

@@ -1,4 +1,4 @@
-import { App, IpcMain } from "electron";
+import { App, IpcMain, IpcMainEvent } from "electron";
 import { IpcChannel } from "../shared/IpcChannel";
 import { WindowManager } from "./WindowManager";
 
@@ -20,5 +20,10 @@ export class MainApplication {
 
     private registerIpcEventListeners(): void {
         this.ipcMain.on(IpcChannel.reactAppStarted, () => console.log("React app started"));
+
+        this.ipcMain.on(
+            IpcChannel.themeShouldUseDarkColors,
+            (event: IpcMainEvent) => (event.returnValue = this.windowManager.themeShouldUseDarkColors())
+        );
     }
 }
