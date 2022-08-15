@@ -7,12 +7,13 @@ import {
     MenuTrigger,
     Tab,
     TabList,
-    Title1,
 } from "@fluentui/react-components";
 import { FC, useState } from "react";
 import { useNavigate } from "react-router";
 import { ColorThemeName } from "../ColorThemes";
 import { AppRoute } from "../AppRoute";
+import { NavigationHeaderUserAvatar } from "./NavigationHeaderUserAvatar";
+import { NavigationHeaderSearch } from "./NavigationHeaderSearch";
 
 interface Props {
     currentColorThemeName: string;
@@ -29,7 +30,7 @@ export const Navigation: FC<Props> = ({ currentColorThemeName, changeColorTheme,
         "Teams High Contrast",
     ];
 
-    const [currentPath, setCurrentPath] = useState<string>("/");
+    const [currentPath, setCurrentPath] = useState<string>(routes[0].path);
     const navigate = useNavigate();
 
     const navigateTo = (path: string) => {
@@ -39,7 +40,8 @@ export const Navigation: FC<Props> = ({ currentColorThemeName, changeColorTheme,
 
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-            <Title1>FluentUI 9</Title1>
+            <NavigationHeaderUserAvatar />
+            <NavigationHeaderSearch />
             <TabList
                 style={{ flexGrow: 1 }}
                 onTabSelect={(_, { value }) => {
@@ -50,8 +52,10 @@ export const Navigation: FC<Props> = ({ currentColorThemeName, changeColorTheme,
                 selectedValue={currentPath}
                 vertical
             >
-                {routes.map(({ path, label }) => (
-                    <Tab value={path}>{label}</Tab>
+                {routes.map(({ path, label, icon }) => (
+                    <Tab value={path} icon={icon}>
+                        {label}
+                    </Tab>
                 ))}
             </TabList>
             <Menu>

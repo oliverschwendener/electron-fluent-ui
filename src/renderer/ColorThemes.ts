@@ -6,6 +6,7 @@ import {
     webDarkTheme,
     webLightTheme,
 } from "@fluentui/react-components";
+import { IpcChannel } from "../shared/IpcChannel";
 
 export type ColorThemeName = "Teams Light" | "Teams Dark" | "Teams High Contrast" | "Web Light" | "Web Dark";
 
@@ -19,3 +20,8 @@ export const colorThemes: Record<ColorThemeName, Theme> = {
 
 export const getTheme = (themeName: ColorThemeName, defaultColorThemeName: ColorThemeName): Theme =>
     colorThemes[themeName] ?? colorThemes[defaultColorThemeName];
+
+export const getDefaultColorThemeName = (): ColorThemeName => (shouldUseDarkColors() ? "Web Dark" : "Web Light");
+
+export const shouldUseDarkColors = (): boolean =>
+    window.Bridge.sendSync<unknown, boolean>(IpcChannel.themeShouldUseDarkColors);
