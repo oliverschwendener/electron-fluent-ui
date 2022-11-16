@@ -43,6 +43,7 @@ export const Navigation: FC<Props> = ({ currentColorThemeName, changeColorTheme,
             <NavigationHeaderUserAvatar />
             <NavigationHeaderSearch />
             <TabList
+                appearance="subtle"
                 style={{ flexGrow: 1 }}
                 onTabSelect={(_, { value }) => {
                     if (typeof value === "string") {

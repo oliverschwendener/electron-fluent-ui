@@ -5,7 +5,11 @@ import { FC } from "react";
 export const NavigationHeaderSearch: FC = () => {
     return (
         <div style={{ display: "flex", flexDirection: "column", marginTop: 20, marginBottom: 20 }}>
-            <Input contentAfter={<Search20Regular aria-label="Enter by voice" />} placeholder="Search" />
+            <Input
+                appearance="filled-darker"
+                contentAfter={<Search20Regular aria-label="Enter by voice" />}
+                placeholder="Search"
+            />
         </div>
     );
 };

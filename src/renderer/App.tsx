@@ -94,23 +94,24 @@ export const App: FC = () => {
 
     return (
         <HashRouter>
-            <FluentProvider
-                theme={getTheme(currentColorThemeName, defaultColorThemeName)}
-                style={{
-                    padding: 20,
-                    height: "100%",
-                    boxSizing: "border-box",
-                }}
-            >
+            <FluentProvider theme={getTheme(currentColorThemeName, defaultColorThemeName)} style={{ height: "100%" }}>
                 <div style={{ display: "flex", flexDirection: "row", gap: 40, height: "100%" }}>
-                    <div style={{ height: "100%", flexShrink: 0 }}>
+                    <div style={{ height: "100%", flexShrink: 0, padding: 20, boxSizing: "border-box" }}>
                         <Navigation
                             currentColorThemeName={currentColorThemeName}
                             changeColorTheme={setCurrentColorThemeName}
                             routes={routes}
                         />
                     </div>
-                    <div style={{ width: "100%" }}>
+                    <div
+                        style={{
+                            width: "100%",
+                            maxHeight: "100vh",
+                            overflowY: "auto",
+                            padding: 20,
+                            boxSizing: "border-box",
+                        }}
+                    >
                         <Routes>
                             {routes.map(({ path, element }) => (
                                 <Route path={path} element={element} />
