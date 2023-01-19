@@ -15,7 +15,6 @@ export const App = () => {
             <Text>
                 This is an app using <Link href="https://react.fluentui.dev">@fluentui/react-components</Link>
             </Text>
-            <Text>{import.meta.env.ENV_VALUE}</Text>
         </div>
     );
 };
