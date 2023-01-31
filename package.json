@@ -20,7 +20,8 @@
         "typecheck:main": "tsc --noEmit -p packages/main/tsconfig.json",
         "typecheck:preload": "tsc --noEmit -p packages/preload/tsconfig.json",
         "typecheck:renderer": "tsc --noEmit -p packages/renderer/tsconfig.json",
-        "package": "pnpm build && electron-builder build --config electron-builder.config.js"
+        "package": "pnpm build && electron-builder build --config electron-builder.config.js --publish never",
+        "package:publish": "pnpm build && electron-builder build --config electron-builder.config.js --publish always"
     },
     "devDependencies": {
         "@types/node": "^18.11.18",
