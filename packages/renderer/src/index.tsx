@@ -1,10 +1,11 @@
 import { createRoot } from "react-dom/client";
+import { HashRouter } from "react-router-dom";
 import { App } from "./App";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const rootElement = document.getElementById("react-app");
-
-    if (rootElement) {
-        createRoot(rootElement).render(<App />);
-    }
+    createRoot(document.getElementById("react-app") as HTMLDivElement).render(
+        <HashRouter>
+            <App />
+        </HashRouter>
+    );
 });
