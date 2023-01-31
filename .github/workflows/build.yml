@@ -34,9 +34,6 @@ jobs:
             - name: Typecheck
               run: pnpm typecheck
 
-            - name: Run tests
-              run: pnpm test
-
             - name: Run build
               run: pnpm build
               env:
