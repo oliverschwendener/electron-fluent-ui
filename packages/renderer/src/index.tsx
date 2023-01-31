@@ -1,13 +1,10 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom";
-import { FluentProvider, teamsLightTheme } from "@fluentui/react-components";
-import { App } from "./Components/App";
+import { createRoot } from "react-dom/client";
+import { App } from "./App";
 
-ReactDOM.render(
-    <StrictMode>
-        <FluentProvider theme={teamsLightTheme}>
-            <App />
-        </FluentProvider>
-    </StrictMode>,
-    document.getElementById("root")
-);
+document.addEventListener("DOMContentLoaded", () => {
+    const rootElement = document.getElementById("react-app");
+
+    if (rootElement) {
+        createRoot(rootElement).render(<App />);
+    }
+});

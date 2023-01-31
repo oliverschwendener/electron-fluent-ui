@@ -20,6 +20,6 @@
         "types": ["vite/client"]
     },
 
-    "include": ["src", "../../types/**/*.d.ts", "../preload/exposed.d.ts", "src/components/.tsx"],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "types/**/*.d.ts", "../../types/**/*.d.ts"],
     "exclude": ["**/*.spec.ts", "**/*.test.ts"]
 }
