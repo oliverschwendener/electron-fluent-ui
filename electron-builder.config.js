@@ -49,7 +49,7 @@ const config = {
                 target: "AppImage",
             },
             {
-                arget: "deb",
+                target: "deb",
             },
             {
                 target: "zip",
