@@ -30,9 +30,31 @@ const config = {
     },
     win: {
         icon: "build_resources/icon.ico",
+        target: [
+            {
+                target: "msi",
+            },
+            {
+                target: "nsis",
+            },
+            {
+                target: "zip",
+            },
+        ],
     },
     linux: {
-        target: [{ target: "AppImage" }, { target: "snap" }, { target: "deb" }, { target: "zip" }],
+        category: "Utility",
+        target: [
+            {
+                target: "AppImage",
+            },
+            {
+                arget: "deb",
+            },
+            {
+                target: "zip",
+            },
+        ],
     },
 };
 
