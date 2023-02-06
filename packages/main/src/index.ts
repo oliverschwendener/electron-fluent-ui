@@ -1,4 +1,5 @@
 import { app, BrowserWindow, ipcMain, IpcMainEvent, nativeTheme } from "electron";
+import { hostname, userInfo } from "os";
 import { join } from "path";
 
 const createBrowserWindow = (): BrowserWindow => {
@@ -18,8 +19,16 @@ const loadFileOrUrl = (browserWindow: BrowserWindow, appIsPackaged: boolean) => 
 
 const registerIpcEventListeners = () => {
     ipcMain.on("reactAppStarted", () => console.log("React app started"));
+
     ipcMain.on("themeShouldUseDarkColors", (event: IpcMainEvent) => {
         event.returnValue = nativeTheme.shouldUseDarkColors;
+    });
+
+    ipcMain.on("getContext", (event) => {
+        event.returnValue = {
+            userName: userInfo().username,
+            computerName: hostname(),
+        };
     });
 };
 
