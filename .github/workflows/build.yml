@@ -23,6 +23,10 @@ jobs:
               with:
                   node-version: 16
 
+            - name: Install Snapcraft
+              if: startsWith(matrix.os, 'ubuntu')
+              uses: samuelmeuli/action-snapcraft@v1
+
             - name: Install pnpm dependencies
               run: pnpm install
               env:

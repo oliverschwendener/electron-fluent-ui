@@ -31,6 +31,9 @@ const config = {
     win: {
         icon: "build_resources/icon.ico",
     },
+    linux: {
+        target: [{ target: "AppImage" }, { target: "snap" }, { target: "deb" }, { target: "zip" }],
+    },
 };
 
 module.exports = config;
