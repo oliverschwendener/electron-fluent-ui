@@ -21,7 +21,7 @@ This is a repo to quickly start the development of an electron application with 
 -   Lint files
 
     ```
-    $ pnpm linkt
+    $ pnpm lint
     ```
 
 -   Perform typecheck
