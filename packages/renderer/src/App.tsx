@@ -43,8 +43,8 @@ export const App: FC = () => {
                         onTabSelect={(_, { value }) => selectTab(value)}
                         vertical
                     >
-                        {pages.map(({ label, path, icon }, index) => (
-                            <Tab key={`${path}-${index}`} value={path} icon={icon}>
+                        {pages.map(({ label, path }, index) => (
+                            <Tab key={`${path}-${index}`} value={path}>
                                 {label}
                             </Tab>
                         ))}

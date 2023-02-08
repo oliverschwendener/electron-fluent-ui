@@ -1,18 +1,18 @@
 import {
     Button,
-    Text,
-    Dialog as FluentDialog,
-    DialogTrigger,
-    DialogSurface,
-    DialogBody,
-    DialogTitle,
+    Dialog,
     DialogActions,
+    DialogBody,
     DialogContent,
+    DialogSurface,
+    DialogTitle,
+    DialogTrigger,
+    Text,
 } from "@fluentui/react-components";
 import { FC } from "react";
 import { Section } from "./Section";
 
-export const Dialog: FC = () => {
+export const Dialogs: FC = () => {
     const dialogBody = () => {
         return (
             <DialogBody>
@@ -34,17 +34,17 @@ export const Dialog: FC = () => {
 
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: 20, padding: 10, boxSizing: "border-box" }}>
-            <Text size={600}>Dialog</Text>
+            <Text size={600}>Dialogs</Text>
             <Section
                 title="Default"
                 content={
                     <div>
-                        <FluentDialog>
+                        <Dialog>
                             <DialogTrigger>
                                 <Button>Open dialog</Button>
                             </DialogTrigger>
                             <DialogSurface>{dialogBody()}</DialogSurface>
-                        </FluentDialog>
+                        </Dialog>
                     </div>
                 }
             />
@@ -52,12 +52,12 @@ export const Dialog: FC = () => {
                 title="Non Modal"
                 content={
                     <div>
-                        <FluentDialog modalType="non-modal">
+                        <Dialog modalType="non-modal">
                             <DialogTrigger>
                                 <Button>Open dialog</Button>
                             </DialogTrigger>
                             <DialogSurface>{dialogBody()}</DialogSurface>
-                        </FluentDialog>
+                        </Dialog>
                     </div>
                 }
             />
@@ -65,12 +65,12 @@ export const Dialog: FC = () => {
                 title="Alert"
                 content={
                     <div>
-                        <FluentDialog modalType="alert">
+                        <Dialog modalType="alert">
                             <DialogTrigger>
                                 <Button>Open dialog</Button>
                             </DialogTrigger>
                             <DialogSurface>{dialogBody()}</DialogSurface>
-                        </FluentDialog>
+                        </Dialog>
                     </div>
                 }
             />
