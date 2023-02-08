@@ -36,26 +36,7 @@ export const App: FC = () => {
     return (
         <FluentProvider theme={theme} style={{ height: "100vh" }}>
             <div style={{ display: "flex", height: "100%", flexDirection: "row", gap: 10 }}>
-                <div
-                    style={{
-                        width: 250,
-                        display: "flex",
-                        flexDirection: "column",
-                        flexShrink: 0,
-                        padding: 10,
-                        gap: 10,
-                    }}
-                >
-                    <div style={{ display: "flex", alignItems: "center", paddingTop: 10, paddingBottom: 10, gap: 10 }}>
-                        <Avatar size={48} />
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            <Text size={400} weight="bold">
-                                {context.userName}
-                            </Text>
-                            <Text size={200}>Local Account</Text>
-                        </div>
-                    </div>
-                    <Input placeholder="Find a setting" />
+                <div style={{ width: 250, padding: 10 }}>
                     <TabList
                         appearance="subtle"
                         selectedValue={path}
