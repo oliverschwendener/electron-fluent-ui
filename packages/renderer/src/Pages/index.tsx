@@ -1,10 +1,10 @@
-import { System24Regular } from "@fluentui/react-icons";
 import { ReactElement } from "react";
 import { Buttons } from "./Buttons";
 import { Checkboxes } from "./Checkboxes";
 import { Comboboxes } from "./Comboboxes";
 import { Dialogs } from "./Dialogs";
 import { Dropdowns } from "./Dropdowns";
+import { Inputs } from "./Inputs";
 
 type NavigationItem = {
     label: string;
@@ -37,5 +37,10 @@ export const pages: NavigationItem[] = [
         label: "Dropdowns",
         path: "/dropdowns",
         element: <Dropdowns />,
+    },
+    {
+        label: "Inputs",
+        path: "/inputs",
+        element: <Inputs />,
     },
 ];
