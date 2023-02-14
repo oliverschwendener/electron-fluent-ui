@@ -18,7 +18,6 @@ export const App: FC = () => {
     const location = useLocation();
 
     const getTheme = (): Theme => (window.ContextBridge.themeShouldUseDarkColors() ? webDarkTheme : webLightTheme);
-    const context = window.ContextBridge.getContext();
 
     const [theme, setTheme] = useState<Theme>(getTheme);
     const [path, setPath] = useState<string>(pages[0].path);

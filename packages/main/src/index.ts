@@ -1,5 +1,4 @@
 import { app, BrowserWindow, ipcMain, IpcMainEvent, nativeTheme } from "electron";
-import { hostname, userInfo } from "os";
 import { join } from "path";
 
 const createBrowserWindow = (): BrowserWindow => {
@@ -22,13 +21,6 @@ const registerIpcEventListeners = () => {
 
     ipcMain.on("themeShouldUseDarkColors", (event: IpcMainEvent) => {
         event.returnValue = nativeTheme.shouldUseDarkColors;
-    });
-
-    ipcMain.on("getContext", (event) => {
-        event.returnValue = {
-            userName: userInfo().username,
-            computerName: hostname(),
-        };
     });
 };
 
