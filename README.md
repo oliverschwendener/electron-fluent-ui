@@ -1,6 +1,6 @@
-# electron-fluent-ui
+# Electron + FluentUI React
 
-This is a repo to quickly start the development of an electron application with [Fluent UI React](https://react.fluentui.dev/).
+This is a repo to quickly start the development of an electron application with [FluentUI React](https://react.fluentui.dev/).
 
 ![example-image.png](docs/example-image.png)
 
@@ -15,7 +15,7 @@ This is a repo to quickly start the development of an electron application with 
 -   Run app in dev mode
 
     ```
-    $ pnpm start
+    $ pnpm dev
     ```
 
 -   Lint files
@@ -34,16 +34,4 @@ This is a repo to quickly start the development of an electron application with 
 
     ```
     $ pnpm build
-    ```
-
--   Package app
-
-    ```
-    $ pnpm package
-    ```
-
--   Package app & publish release
-
-    ```
-    $ pnpm package:publish
     ```

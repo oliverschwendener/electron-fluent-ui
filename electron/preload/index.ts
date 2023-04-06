@@ -1,5 +1,5 @@
 import { contextBridge, ipcRenderer } from "electron";
-import { ContextBridge } from "./Bridge";
+import { ContextBridge } from "./ContextBridge";
 
 contextBridge.exposeInMainWorld("ContextBridge", <ContextBridge>{
     reactAppStarted: () => ipcRenderer.send("reactAppStarted"),
