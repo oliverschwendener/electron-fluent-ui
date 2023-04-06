@@ -33,5 +33,5 @@ This is a repo to quickly start the development of an electron application with 
 -   Build app
 
     ```
-    $ pnpm build
+    $ pnpm build && pnpm package
     ```
