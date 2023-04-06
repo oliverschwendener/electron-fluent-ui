@@ -1,14 +1,4 @@
-import {
-    Avatar,
-    FluentProvider,
-    Input,
-    Tab,
-    TabList,
-    Text,
-    Theme,
-    webDarkTheme,
-    webLightTheme,
-} from "@fluentui/react-components";
+import { FluentProvider, Tab, TabList, Theme, webDarkTheme, webLightTheme } from "@fluentui/react-components";
 import { FC, useEffect, useState } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router";
 import { pages } from "./Pages";

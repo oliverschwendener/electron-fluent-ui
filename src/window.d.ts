@@ -1,4 +1,4 @@
-import type { ContextBridge } from "../../preload/src/Bridge";
+import type { ContextBridge } from "../electron/preload/ContextBridge";
 
 export declare global {
     interface Window {

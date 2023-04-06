@@ -1,50 +1,44 @@
 {
     "name": "electron-fluent-ui",
-    "description": "Quickstart repository for electron applications using Fluent UI",
-    "version": "2.0.0",
+    "description": "Quickstart repository for electron applications using FluentUI React",
+    "version": "3.0.0",
     "license": "MIT",
     "author": {
         "email": "oliver.schwendener@hotmail.com",
         "name": "Oliver Schwendener",
         "url": "https://github.com/oliverschwendener"
     },
-    "main": "packages/main/dist/index.cjs",
+    "main": "dist-electron/main/index.js",
     "scripts": {
-        "build:main": "cd ./packages/main && vite build",
-        "build:preload": "cd ./packages/preload && vite build",
-        "build:renderer": "cd ./packages/renderer && vite build",
-        "build": "pnpm build:main && pnpm build:preload && pnpm build:renderer",
+        "build": "vite build",
+        "dev": "vite",
         "lint": "eslint . --ext js,ts,tsx",
-        "start": "esno scripts/watch.ts",
-        "typecheck": "pnpm typecheck:main && pnpm typecheck:preload && pnpm typecheck:renderer",
-        "typecheck:main": "tsc --noEmit -p packages/main/tsconfig.json",
-        "typecheck:preload": "tsc --noEmit -p packages/preload/tsconfig.json",
-        "typecheck:renderer": "tsc --noEmit -p packages/renderer/tsconfig.json",
-        "package": "pnpm build && electron-builder build --config electron-builder.config.js --publish never",
-        "package:publish": "pnpm build && electron-builder build --config electron-builder.config.js --publish always"
+        "package:publish": "electron-builder --config electron-builder.config.js --publish always",
+        "package": "electron-builder --config electron-builder.config.js",
+        "typecheck": "tsc --noEmit"
     },
     "devDependencies": {
-        "@types/node": "^18.11.18",
-        "@types/react": "^18.0.27",
-        "@types/react-dom": "^18.0.10",
+        "@types/react": "^18.0.28",
+        "@types/react-dom": "^18.0.11",
         "@types/react-router-dom": "^5.3.3",
-        "@typescript-eslint/eslint-plugin": "^5.50.0",
-        "@typescript-eslint/parser": "^5.50.0",
-        "@vitejs/plugin-react": "^3.0.1",
-        "electron": "^22.1.0",
+        "@typescript-eslint/eslint-plugin": "^5.57.0",
+        "@typescript-eslint/parser": "^5.57.0",
+        "@vitejs/plugin-react": "^3.1.0",
+        "electron": "^24.0.0",
         "electron-builder": "^23.6.0",
-        "eslint": "^8.33.0",
-        "esno": "^0.16.3",
-        "prettier": "^2.8.3",
-        "typescript": "^4.9.5",
-        "vite": "^4.0.4"
+        "eslint": "^8.37.0",
+        "prettier": "^2.8.7",
+        "typescript": "^5.0.2",
+        "vite": "^4.1.4",
+        "vite-plugin-electron": "^0.11.1",
+        "vite-plugin-electron-renderer": "^0.13.14"
     },
     "dependencies": {
-        "@fluentui/react-components": "^9.14.0",
-        "@fluentui/react-icons": "^2.0.193",
+        "@fluentui/react-components": "^9.18.7",
+        "@fluentui/react-icons": "^2.0.199",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router": "^6.8.0",
-        "react-router-dom": "^6.8.0"
+        "react-router": "^6.10.0",
+        "react-router-dom": "^6.10.0"
     }
 }

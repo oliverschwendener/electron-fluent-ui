@@ -6,15 +6,15 @@ const config = {
     appId: "com.electron.fluentui",
     productName: "Electron Fluent UI",
     directories: {
-        output: "dist",
-        buildResources: "build_resources",
+        output: "release",
+        buildResources: "build",
     },
-    files: ["packages/**/dist/**"],
+    files: ["dist-electron/**/*.js", "dist/**/*"],
     extraMetadata: {
         version: process.env.VITE_APP_VERSION,
     },
     mac: {
-        icon: "build_resources/icon.png",
+        icon: "build/icon.png",
         hardenedRuntime: true,
         gatekeeperAssess: false,
         target: [
@@ -29,7 +29,7 @@ const config = {
         ],
     },
     win: {
-        icon: "build_resources/icon.ico",
+        icon: "build/icon.ico",
         target: [
             {
                 target: "msi",
