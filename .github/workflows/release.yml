@@ -39,6 +39,11 @@ jobs:
 
             - name: Build
               run: pnpm build
+              env:
+                  NODE_ENV: production
 
             - name: Package and publish
               run: pnpm package:publish
+              env:
+                  CI: true
+                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
