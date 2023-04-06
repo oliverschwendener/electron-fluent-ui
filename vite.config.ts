@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
 
     const isServe = command === "serve";
     const isBuild = command === "build";
-    const sourcemap = isServe || !!process.env.VSCODE_DEBUG;
+    const sourcemap = isServe;
 
     return {
         resolve: {
@@ -60,15 +60,13 @@ export default defineConfig(({ command }) => {
             ]),
             renderer(),
         ],
-        server:
-            process.env.VSCODE_DEBUG &&
-            (() => {
-                const { hostname, port } = new URL("http://127.0.0.1:7777");
-                return {
-                    host: hostname,
-                    port: port,
-                };
-            })(),
+        server: (() => {
+            const { hostname, port } = new URL("http://127.0.0.1:7777/");
+            return {
+                host: hostname,
+                port: port,
+            };
+        })(),
         clearScreen: false,
     };
 });
