@@ -3,9 +3,9 @@ name: Build
 on: [push, pull_request]
 
 jobs:
-    setup:
+    build:
         runs-on: ubuntu-22.04
-        name: Setup
+        name: Build
         steps:
             - name: Checkout current commit/branch/tag
               uses: actions/checkout@v3
@@ -25,10 +25,11 @@ jobs:
               env:
                   NODE_ENV: development
 
-    lint:
-        runs-on: ubuntu-22.04
-        name: Linting
-        needs: [setup]
-        steps:
-            - name: Linting files
+            - name: Lint files
               run: pnpm lint
+
+            - name: Typecheck
+              run: pnpm typecheck
+
+            - name: Build
+              run: pnpm build

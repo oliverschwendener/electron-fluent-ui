@@ -10,11 +10,11 @@
     },
     "main": "dist-electron/main/index.js",
     "scripts": {
-        "build": "tsc && vite build",
-        "package": "electron-builder --config electron-builder.config.js",
-        "package:publish": "electron-builder --config electron-builder.config.js --publish always",
+        "build": "vite build",
         "dev": "vite",
         "lint": "eslint . --ext js,ts,tsx",
+        "package:publish": "electron-builder --config electron-builder.config.js --publish always",
+        "package": "electron-builder --config electron-builder.config.js",
         "typecheck": "tsc --noEmit"
     },
     "devDependencies": {
