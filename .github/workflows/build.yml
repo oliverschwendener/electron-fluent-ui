@@ -37,5 +37,8 @@ jobs:
             - name: Typecheck
               run: pnpm typecheck
 
+            - name: Prettier check
+              run: pnpm prettier:check
+
             - name: Build
               run: pnpm build
