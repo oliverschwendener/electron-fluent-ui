@@ -19,8 +19,8 @@
         "typecheck": "tsc --noEmit"
     },
     "devDependencies": {
-        "@types/react": "^18.0.28",
-        "@types/react-dom": "^18.0.11",
+        "@types/react": "^18.2.6",
+        "@types/react-dom": "^18.2.4",
         "@types/react-router-dom": "^5.3.3",
         "@typescript-eslint/eslint-plugin": "^5.57.0",
         "@typescript-eslint/parser": "^5.57.0",
@@ -39,7 +39,7 @@
         "@fluentui/react-icons": "^2.0.201",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router": "^6.10.0",
-        "react-router-dom": "^6.10.0"
+        "react-router": "^6.11.1",
+        "react-router-dom": "^6.11.1"
     }
 }
