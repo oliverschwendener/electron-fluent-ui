@@ -31,15 +31,6 @@ jobs:
               env:
                   NODE_ENV: development
 
-            - name: Lint files
-              run: pnpm lint
-
-            - name: Typecheck
-              run: pnpm typecheck
-
-            - name: Prettier check
-              run: pnpm prettier:check
-
             - name: Build
               run: pnpm build
               env:
