@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 dependencies:
   '@fluentui/react-components':
@@ -40,8 +44,8 @@ devDependencies:
     specifier: ^3.1.0
     version: 3.1.0(vite@4.3.5)
   electron:
-    specifier: ^24.2.0
-    version: 24.2.0
+    specifier: ^25.0.1
+    version: 25.0.1
   electron-builder:
     specifier: ^23.6.0
     version: 23.6.0
@@ -2789,8 +2793,8 @@ packages:
     resolution: {integrity: sha512-gM7TdwuG3amns/1rlgxMbeeyNoBFPa+4Uu0c7FeROWh4qWmvSOnvcslKmWy51ggLKZ2n/F/4i2HJ+PVNxH9uCQ==}
     dev: true
 
-  /electron@24.2.0:
-    resolution: {integrity: sha512-fEYAftYqFhveniWJbEHXjNMWjooFFIuqNj/eEFJkGzycInfBJq/c4E/dew++s6s0YLubxFnjoF2qZiqapLj0gA==}
+  /electron@25.0.1:
+    resolution: {integrity: sha512-YD3xCrH01LiPeLlG90DWgMXJK69UxY4NiXKqXT12HOiXLqEaKrLWap+CiiS7J7SWUXz+4XOItQI8g1dtG7zkkA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
@@ -3194,7 +3198,7 @@ packages:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.3.8
+      semver: 7.5.0
       serialize-error: 7.0.1
     dev: true
     optional: true
