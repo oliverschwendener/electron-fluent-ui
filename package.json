@@ -35,8 +35,8 @@
         "vite-plugin-electron-renderer": "^0.14.5"
     },
     "dependencies": {
-        "@fluentui/react-components": "^9.19.1",
-        "@fluentui/react-icons": "^2.0.201",
+        "@fluentui/react-components": "^9.23.0",
+        "@fluentui/react-icons": "^2.0.204",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router": "^6.11.1",
