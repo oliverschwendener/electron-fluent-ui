@@ -40,5 +40,8 @@ jobs:
             - name: Prettier check
               run: pnpm prettier:check
 
+            - name: Run tests
+              run: pnpm test
+
             - name: Build
               run: pnpm build
