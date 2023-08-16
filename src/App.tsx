@@ -1,15 +1,14 @@
-import { FluentProvider, Tab, TabList, Theme, webDarkTheme, webLightTheme } from "@fluentui/react-components";
-import { FC, useEffect, useState } from "react";
+import { FluentProvider, Tab, TabList } from "@fluentui/react-components";
+import { useEffect, useState } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router";
 import { pages } from "./Pages";
+import { ThemeMapping, ThemeName, getThemeName } from "./Themes";
 
-export const App: FC = () => {
+export const App = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const getTheme = (): Theme => (window.ContextBridge.themeShouldUseDarkColors() ? webDarkTheme : webLightTheme);
-
-    const [theme, setTheme] = useState<Theme>(getTheme);
+    const [themeName, setThemeName] = useState<ThemeName>(getThemeName());
     const [path, setPath] = useState<string>(pages[0].path);
 
     const selectTab = (selectedPath: unknown) =>
@@ -19,11 +18,11 @@ export const App: FC = () => {
 
     useEffect(() => {
         window.ContextBridge.reactAppStarted();
-        window.ContextBridge.onNativeThemeChanged(() => setTheme(getTheme()));
+        window.ContextBridge.onNativeThemeChanged(() => setThemeName(getThemeName()));
     }, []);
 
     return (
-        <FluentProvider theme={theme} style={{ height: "100vh" }}>
+        <FluentProvider theme={ThemeMapping[themeName]} style={{ height: "100vh" }}>
             <div style={{ display: "flex", height: "100%", flexDirection: "row", gap: 10 }}>
                 <div style={{ width: 250, padding: 10 }}>
                     <TabList

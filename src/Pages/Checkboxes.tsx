@@ -1,8 +1,7 @@
 import { Checkbox, Text } from "@fluentui/react-components";
-import { FC } from "react";
 import { Section } from "./Section";
 
-export const Checkboxes: FC = () => {
+export const Checkboxes = () => {
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: 20, padding: 10, boxSizing: "border-box" }}>
             <Text size={600}>Checkboxes</Text>

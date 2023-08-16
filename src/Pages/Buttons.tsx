@@ -1,9 +1,8 @@
 import { Button, Text } from "@fluentui/react-components";
 import { AddCircle24Regular } from "@fluentui/react-icons";
-import { FC } from "react";
 import { Section } from "./Section";
 
-export const Buttons: FC = () => {
+export const Buttons = () => {
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: 20, padding: 10, boxSizing: "border-box" }}>
             <Text size={600}>Buttons</Text>

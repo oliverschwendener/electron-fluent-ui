@@ -1,7 +1,12 @@
-import { FC, ReactElement } from "react";
+import { ReactElement } from "react";
 import { SectionTitle } from "./SectionTitle";
 
-export const Section: FC<{ title: string; content: ReactElement }> = ({ title, content }) => {
+type SectionProps = {
+    title: string;
+    content: ReactElement;
+};
+
+export const Section = ({ title, content }: SectionProps) => {
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
             <SectionTitle label={title} />

@@ -1,8 +1,7 @@
 import { Input, Label, Text } from "@fluentui/react-components";
-import { FC } from "react";
 import { Section } from "./Section";
 
-export const Inputs: FC = () => {
+export const Inputs = () => {
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: 20, padding: 10, boxSizing: "border-box" }}>
             <Text size={600}>Dropdowns</Text>

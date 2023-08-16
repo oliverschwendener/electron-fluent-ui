@@ -9,10 +9,9 @@ import {
     DialogTrigger,
     Text,
 } from "@fluentui/react-components";
-import { FC } from "react";
 import { Section } from "./Section";
 
-export const Dialogs: FC = () => {
+export const Dialogs = () => {
     const dialogBody = () => {
         return (
             <DialogBody>

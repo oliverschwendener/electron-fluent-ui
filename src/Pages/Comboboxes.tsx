@@ -1,8 +1,8 @@
 import { Combobox, Option, Text } from "@fluentui/react-components";
-import { FC, useState } from "react";
+import { useState } from "react";
 import { Section } from "./Section";
 
-export const Comboboxes: FC = () => {
+export const Comboboxes = () => {
     const [multiSelectValue, setMultiSelectValue] = useState<string>("");
 
     return (
