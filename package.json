@@ -19,7 +19,7 @@
         "test:coverage": "vitest run --coverage",
         "test:watch": "vitest",
         "test": "vitest run",
-        "typecheck:electron": "tsc -p tsconfig^.node.json --noEmit",
+        "typecheck:electron": "tsc -p tsconfig.node.json --noEmit",
         "typecheck:renderer": "tsc -p tsconfig.json --noEmit"
     },
     "devDependencies": {
