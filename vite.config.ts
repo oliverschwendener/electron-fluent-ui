@@ -7,7 +7,8 @@ import renderer from "vite-plugin-electron-renderer";
 import pkg from "./package.json";
 
 export default defineConfig(({ command }) => {
-    rmSync("dist-electron", { recursive: true, force: true });
+    rmSync("dist-main", { recursive: true, force: true });
+    rmSync("dist-preload", { recursive: true, force: true });
 
     const isServe = command === "serve";
     const isBuild = command === "build";
@@ -15,17 +16,21 @@ export default defineConfig(({ command }) => {
 
     const resolve: { alias: AliasOptions } = {
         alias: {
-            "@common": join(__dirname, "common"),
+            "@common": join(__dirname, "src", "common"),
         },
     };
 
     return {
+        root: "src/renderer",
+        build: {
+            outDir: "../../dist-renderer",
+        },
         resolve,
         plugins: [
             react(),
             electron([
                 {
-                    entry: "electron/main/index.ts",
+                    entry: "src/main/index.ts",
                     onstart(options) {
                         options.startup();
                     },
@@ -34,7 +39,7 @@ export default defineConfig(({ command }) => {
                         build: {
                             sourcemap,
                             minify: isBuild,
-                            outDir: "dist-electron/main",
+                            outDir: "dist-main",
                             rollupOptions: {
                                 external: Object.keys("dependencies" in pkg ? pkg.dependencies : {}),
                             },
@@ -42,7 +47,7 @@ export default defineConfig(({ command }) => {
                     },
                 },
                 {
-                    entry: "electron/preload/index.ts",
+                    entry: "src/preload/index.ts",
                     onstart(options) {
                         // Notify the Renderer-Process to reload the page when the Preload-Scripts build is complete,
                         // instead of restarting the entire Electron App.
@@ -53,7 +58,7 @@ export default defineConfig(({ command }) => {
                         build: {
                             sourcemap: sourcemap ? "inline" : undefined,
                             minify: isBuild,
-                            outDir: "dist-electron/preload",
+                            outDir: "dist-preload",
                             rollupOptions: {
                                 external: Object.keys("dependencies" in pkg ? pkg.dependencies : {}),
                             },
@@ -68,5 +73,8 @@ export default defineConfig(({ command }) => {
             port: 7777,
         }))(),
         clearScreen: false,
+        test: {
+            root: "./src",
+        },
     };
 });

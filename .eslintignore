@@ -1,4 +1,5 @@
-node_modules/
-dist-electron/
-dist/
 coverage/
+dist-main/
+dist-preload/
+dist-renderer/
+node_modules/
