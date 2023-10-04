@@ -19,7 +19,8 @@
         "test:coverage": "vitest run --coverage",
         "test:watch": "vitest",
         "test": "vitest run",
-        "typecheck": "tsc --noEmit"
+        "typecheck:electron": "tsc -p tsconfig.node.json --noEmit",
+        "typecheck:renderer": "tsc -p tsconfig.json --noEmit"
     },
     "devDependencies": {
         "@types/react": "^18.2.22",
@@ -33,6 +34,7 @@
         "electron-builder": "^24.6.4",
         "eslint": "^8.49.0",
         "prettier": "^3.0.3",
+        "prettier-plugin-organize-imports": "^3.2.3",
         "typescript": "^5.2.2",
         "vite": "^4.4.9",
         "vite-plugin-electron": "^0.14.1",

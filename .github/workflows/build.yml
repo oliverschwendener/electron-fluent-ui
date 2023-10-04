@@ -34,8 +34,10 @@ jobs:
             - name: Lint files
               run: pnpm lint
 
-            - name: Typecheck
-              run: pnpm typecheck
+            - name: Typechecks
+              run: |
+                  pnpm typecheck:electron
+                  pnpm typecheck:renderer
 
             - name: Prettier check
               run: pnpm prettier:check

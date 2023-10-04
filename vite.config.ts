@@ -1,7 +1,7 @@
+import react from "@vitejs/plugin-react";
 import { rmSync } from "fs";
 import { join } from "path";
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig, type AliasOptions } from "vite";
 import electron from "vite-plugin-electron";
 import renderer from "vite-plugin-electron-renderer";
 import pkg from "./package.json";
@@ -13,12 +13,14 @@ export default defineConfig(({ command }) => {
     const isBuild = command === "build";
     const sourcemap = isServe;
 
-    return {
-        resolve: {
-            alias: {
-                "@": join(__dirname, "src"),
-            },
+    const resolve: { alias: AliasOptions } = {
+        alias: {
+            "@common": join(__dirname, "common"),
         },
+    };
+
+    return {
+        resolve,
         plugins: [
             react(),
             electron([
@@ -28,6 +30,7 @@ export default defineConfig(({ command }) => {
                         options.startup();
                     },
                     vite: {
+                        resolve,
                         build: {
                             sourcemap,
                             minify: isBuild,
@@ -46,6 +49,7 @@ export default defineConfig(({ command }) => {
                         options.reload();
                     },
                     vite: {
+                        resolve,
                         build: {
                             sourcemap: sourcemap ? "inline" : undefined,
                             minify: isBuild,
