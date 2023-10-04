@@ -27,10 +27,11 @@ This is a repo to quickly start the development of an electron application with 
 -   Perform typecheck
 
     ```
-    $ pnpm typecheck
+    $ pnpm typecheck:electron
+    $ pnpm typecheck:renderer
     ```
 
--   Build app
+-   Build and package app
 
     ```
     $ pnpm build && pnpm package
