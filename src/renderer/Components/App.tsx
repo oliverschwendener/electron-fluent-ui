@@ -1,6 +1,14 @@
-import { Button, FluentProvider } from "@fluentui/react-components";
+import { Button, FluentProvider, webDarkTheme, webLightTheme, type Theme } from "@fluentui/react-components";
 import { useEffect, useState } from "react";
-import { ThemeMapping, ThemeName, getThemeName } from "./Themes";
+
+type ThemeName = "Light" | "Dark";
+
+const getThemeName = (): ThemeName => (window.ContextBridge.themeShouldUseDarkColors() ? "Dark" : "Light");
+
+const ThemeMapping: Record<ThemeName, Theme> = {
+    Dark: webDarkTheme,
+    Light: webLightTheme,
+};
 
 export const App = () => {
     const [themeName, setThemeName] = useState<ThemeName>(getThemeName());
