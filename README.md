@@ -27,7 +27,8 @@ This is a repo to quickly start the development of an electron application with 
 -   Perform typecheck
 
     ```
-    $ pnpm typecheck:electron
+    $ pnpm typecheck:main
+    $ pnpm typecheck:preload
     $ pnpm typecheck:renderer
     ```
 
