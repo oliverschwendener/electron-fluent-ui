@@ -50,8 +50,8 @@ devDependencies:
     specifier: ^0.34.6
     version: 0.34.6(vitest@0.34.6)
   electron:
-    specifier: ^27.0.0
-    version: 27.0.0
+    specifier: ^27.1.2
+    version: 27.1.2
   electron-builder:
     specifier: ^24.9.1
     version: 24.9.1
@@ -3065,8 +3065,8 @@ packages:
     resolution: {integrity: sha512-RkrZF//Ya+0aJq2NM3OdisNh5ZodZq1rdXOS96G8DdDgpDKqKE81yTbbQ3F/4CKm1JBPsGu1Lp/akkna2xO06Q==}
     dev: true
 
-  /electron@27.0.0:
-    resolution: {integrity: sha512-mr3Zoy82l8XKK/TgguE5FeNeHZ9KHXIGIpUMjbjZWIREfAv+X2Q3vdX6RG0Pmi1K23AFAxANXQezIHBA2Eypwg==}
+  /electron@27.1.2:
+    resolution: {integrity: sha512-Dy6BUuGLiIJv+zfsXwr78TV2TNppi24rXF4PIIS+OjDblEKdkI9r1iM8JUd3/x3sbGUy5mdLMSPhvmu//IhkgA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
