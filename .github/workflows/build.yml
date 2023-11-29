@@ -24,7 +24,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: 16
+                  node-version: 18
 
             - name: Install pnpm dependencies
               run: pnpm install
@@ -35,10 +35,7 @@ jobs:
               run: pnpm lint
 
             - name: Typechecks
-              run: |
-                  pnpm typecheck:main
-                  pnpm typecheck:preload
-                  pnpm typecheck:renderer
+              run: pnpm typecheck
 
             - name: Prettier check
               run: pnpm prettier:check
@@ -46,5 +43,5 @@ jobs:
             - name: Run tests
               run: pnpm test
 
-            - name: Build
+            - name: Build app
               run: pnpm build
