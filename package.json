@@ -45,8 +45,8 @@
         "vitest": "^0.34.6"
     },
     "dependencies": {
-        "@fluentui/react-components": "^9.34.0",
-        "@fluentui/react-icons": "^2.0.218",
+        "@fluentui/react-components": "^9.41.0",
+        "@fluentui/react-icons": "^2.0.223",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router": "^6.16.0",
