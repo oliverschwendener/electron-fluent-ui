@@ -40,6 +40,9 @@ const config = {
             {
                 target: "zip",
             },
+            {
+                target: "appx",
+            },
         ],
     },
     linux: {
