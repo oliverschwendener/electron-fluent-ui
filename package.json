@@ -1,7 +1,7 @@
 {
     "name": "electron-fluent-ui",
     "description": "Quickstart repository for electron applications using Fluent UI React",
-    "version": "3.4.0",
+    "version": "3.5.0",
     "license": "MIT",
     "author": {
         "email": "oliver.schwendener@proton.me",
