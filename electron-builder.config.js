@@ -59,6 +59,9 @@ const config = {
             },
         ],
     },
+    appx: {
+        applicationId: "OliverSchwendener.ElectronFluentUI",
+    },
 };
 
 module.exports = config;
