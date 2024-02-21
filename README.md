@@ -32,6 +32,12 @@ This is a repo to quickly start the development of an electron application with 
     $ pnpm typecheck:renderer
     ```
 
+-   Run tests
+
+    ```
+    $ pnpm test
+    ```
+
 -   Build and package app
 
     ```
