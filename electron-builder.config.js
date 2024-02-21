@@ -14,7 +14,7 @@ const config = {
         version: process.env.VITE_APP_VERSION,
     },
     mac: {
-        icon: "build/icon.png",
+        icon: "build/app-icon-dark.png",
         hardenedRuntime: true,
         gatekeeperAssess: false,
         target: [
@@ -29,7 +29,7 @@ const config = {
         ],
     },
     win: {
-        icon: "build/icon.ico",
+        icon: "build/app-icon-dark.png",
         target: [
             {
                 target: "msi",
