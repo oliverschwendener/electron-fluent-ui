@@ -6,9 +6,11 @@ const createBrowserWindow = (): BrowserWindow => {
 
     return new BrowserWindow({
         autoHideMenuBar: true,
+        backgroundMaterial: "mica",
         webPreferences: {
             preload: preloadScriptFilePath,
         },
+        icon: join(__dirname, "..", "build", "app-icon-dark.png"),
     });
 };
 

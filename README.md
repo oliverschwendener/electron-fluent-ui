@@ -1,8 +1,8 @@
+![example-image.png](docs/example-image.png)
+
 # Electron + Fluent UI React
 
 This is a repo to quickly start the development of an electron application with [Fluent UI React](https://react.fluentui.dev/).
-
-![example-image.png](docs/example-image.png)
 
 ## Development
 
