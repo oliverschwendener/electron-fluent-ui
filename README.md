@@ -1,8 +1,9 @@
-![example-image.png](docs/example-image.png)
-
 # Electron + Fluent UI React
 
 This is a repo to quickly start the development of an electron application with [Fluent UI React](https://react.fluentui.dev/).
+
+![macOS Light](docs/macos-light.png)
+![macOS Dark](docs/macos-dark.png)
 
 ## Development
 
