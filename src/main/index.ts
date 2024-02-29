@@ -7,6 +7,7 @@ const createBrowserWindow = (): BrowserWindow => {
     return new BrowserWindow({
         autoHideMenuBar: true,
         backgroundMaterial: "mica",
+        vibrancy: "header",
         webPreferences: {
             preload: preloadScriptFilePath,
         },

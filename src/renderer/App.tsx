@@ -1,41 +1,85 @@
-import { FluentProvider, Tab, TabList, webDarkTheme, webLightTheme, type Theme } from "@fluentui/react-components";
-import { AlbumRegular, ImageRegular, SettingsRegular, TagRegular } from "@fluentui/react-icons";
+import {
+    FluentProvider,
+    Link,
+    MessageBar,
+    MessageBarBody,
+    MessageBarTitle,
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderCell,
+    TableRow,
+    webDarkTheme,
+    webLightTheme,
+    type Theme,
+} from "@fluentui/react-components";
 import { useEffect, useState } from "react";
+import { Header } from "./Header";
+import { Header2 } from "./Header2";
+import { Mails } from "./Mails";
+import { Sidebar } from "./Sidebar";
 
-type ThemeName = "Light" | "Dark";
+const shouldUseDarkColors = (): boolean =>
+    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-const getThemeName = (): ThemeName => (window.ContextBridge.themeShouldUseDarkColors() ? "Dark" : "Light");
-
-const ThemeMapping: Record<ThemeName, Theme> = {
-    Dark: webDarkTheme,
-    Light: webLightTheme,
-};
+const getTheme = () => (shouldUseDarkColors() ? webDarkTheme : webLightTheme);
 
 export const App = () => {
-    const [themeName, setThemeName] = useState<ThemeName>(getThemeName());
+    const [theme, setTheme] = useState<Theme>(getTheme());
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        window.ContextBridge.onNativeThemeChanged(() => setThemeName(getThemeName()));
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 2500);
+
+        window.ContextBridge.onNativeThemeChanged(() => setTheme(getTheme()));
     }, []);
 
     return (
-        <FluentProvider theme={ThemeMapping[themeName]} style={{ height: "100vh", background: "transparent" }}>
-            <div style={{ display: "flex", flexDirection: "row", padding: 10, boxSizing: "border-box", gap: 20 }}>
-                <TabList style={{ width: 250 }} vertical selectedValue={"tab1"} size="large">
-                    <Tab icon={<ImageRegular />} value="tab1">
-                        All Photos
-                    </Tab>
-                    <Tab icon={<AlbumRegular />} value="tab2">
-                        Collections
-                    </Tab>
-                    <Tab icon={<TagRegular />} value="tab3">
-                        Tags
-                    </Tab>
-                    <Tab icon={<SettingsRegular />} value="tab4">
-                        Settings
-                    </Tab>
-                </TabList>
-                <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>Content...</div>
+        <FluentProvider theme={theme} style={{ height: "100vh", background: "transparent" }}>
+            <div
+                style={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "row",
+                    boxSizing: "border-box",
+                }}
+            >
+                <Sidebar theme={theme} />
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: "100%",
+                        gap: 20,
+                        padding: 20,
+                        boxSizing: "border-box",
+                    }}
+                >
+                    <Header />
+                    <Header2 />
+                    <div style={{ flexGrow: 1 }}>
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHeaderCell style={{ width: 50 }}>From</TableHeaderCell>
+                                    <TableHeaderCell>Subject</TableHeaderCell>
+                                    <TableHeaderCell style={{ width: 100 }}>Received on</TableHeaderCell>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                <Mails isLoading={isLoading} />
+                            </TableBody>
+                        </Table>
+                    </div>
+                    <MessageBar>
+                        <MessageBarBody>
+                            <MessageBarTitle>Update available</MessageBarTitle>
+                            Click <Link>here</Link> to install.
+                        </MessageBarBody>
+                    </MessageBar>
+                </div>
             </div>
         </FluentProvider>
     );
