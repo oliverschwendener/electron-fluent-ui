@@ -11,7 +11,7 @@ export const Header2 = () => {
             }}
         >
             <Text>Inbox</Text>
-            <RadioGroup layout="horizontal" value="all">
+            <RadioGroup layout="horizontal" defaultValue="all">
                 <Radio value="all" label="All" />
                 <Radio value="unread" label="Unread" />
                 <Radio value="read" label="Read" />

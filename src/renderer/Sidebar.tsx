@@ -29,7 +29,7 @@ export const Sidebar = ({ theme }: { theme: Theme }) => {
         >
             <Button icon={<AddRegular />}>New message</Button>
             <div style={{ flexGrow: 1 }}>
-                <TabList vertical selectedValue={"tab1"} appearance="subtle">
+                <TabList vertical defaultSelectedValue="tab1" appearance="subtle">
                     <Tab icon={<MailRegular />} value="tab1">
                         Inbox
                     </Tab>
@@ -42,13 +42,13 @@ export const Sidebar = ({ theme }: { theme: Theme }) => {
                     <Tab icon={<StarRegular />} value="tab4">
                         Starred
                     </Tab>
-                    <Tab icon={<ArchiveRegular />} value="tab4">
+                    <Tab icon={<ArchiveRegular />} value="tab5">
                         Archive
                     </Tab>
-                    <Tab icon={<FireRegular />} value="tab4">
+                    <Tab icon={<FireRegular />} value="tab6">
                         Spam
                     </Tab>
-                    <Tab icon={<BinRecycleRegular />} value="tab4">
+                    <Tab icon={<BinRecycleRegular />} value="tab7">
                         Trash
                     </Tab>
                 </TabList>

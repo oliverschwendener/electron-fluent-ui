@@ -15,6 +15,7 @@ export const Header = () => {
         >
             <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
                 <Input
+                    autoFocus
                     width={"100%"}
                     contentBefore={<SearchRegular />}
                     placeholder="Search messages"
