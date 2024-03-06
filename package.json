@@ -1,6 +1,6 @@
 {
     "name": "electron-fluent-ui",
-    "description": "Quickstart repository for electron applications using Fluent UI React",
+    "description": "Template for developing Electron applications using TypeScript and Fluent UI React components",
     "version": "4.1.0",
     "license": "MIT",
     "author": {
