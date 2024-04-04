@@ -25,31 +25,31 @@
         "typecheck:renderer": "tsc -p src/renderer/tsconfig.json --noEmit"
     },
     "devDependencies": {
-        "@types/node": "^20.11.19",
-        "@types/react": "^18.2.56",
-        "@types/react-dom": "^18.2.19",
+        "@types/node": "^20.12.4",
+        "@types/react": "^18.2.74",
+        "@types/react-dom": "^18.2.24",
         "@types/react-router-dom": "^5.3.3",
-        "@typescript-eslint/eslint-plugin": "^7.0.1",
-        "@typescript-eslint/parser": "^7.0.1",
+        "@typescript-eslint/eslint-plugin": "^7.5.0",
+        "@typescript-eslint/parser": "^7.5.0",
         "@vitejs/plugin-react": "^4.2.1",
         "@vitest/coverage-v8": "^1.4.0",
-        "electron": "^29.1.0",
+        "electron": "^29.2.0",
         "electron-builder": "^24.13.3",
-        "eslint": "^8.56.0",
+        "eslint": "^8.57.0",
         "prettier": "^3.2.5",
         "prettier-plugin-organize-imports": "^3.2.4",
-        "typescript": "^5.3.3",
+        "typescript": "^5.4.3",
         "vite": "^5.2.8",
         "vite-plugin-electron": "^0.28.4",
         "vite-plugin-electron-renderer": "^0.14.5",
         "vitest": "^1.4.0"
     },
     "dependencies": {
-        "@fluentui/react-components": "^9.46.7",
-        "@fluentui/react-icons": "^2.0.230",
+        "@fluentui/react-components": "^9.47.3",
+        "@fluentui/react-icons": "^2.0.233",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router": "^6.22.1",
-        "react-router-dom": "^6.22.1"
+        "react-router": "^6.22.3",
+        "react-router-dom": "^6.22.3"
     }
 }
