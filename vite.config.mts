@@ -73,5 +73,8 @@ export default defineConfig(({ command }) => {
             port: 7777,
         }))(),
         clearScreen: false,
+        test: {
+            root: "src",
+        },
     };
 });
