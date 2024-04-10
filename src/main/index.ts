@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, IpcMainEvent, nativeTheme } from "electron";
+import { BrowserWindow, app, ipcMain, nativeTheme, type IpcMainEvent } from "electron";
 import { join } from "path";
 
 const createBrowserWindow = (): BrowserWindow => {
@@ -15,10 +15,10 @@ const createBrowserWindow = (): BrowserWindow => {
     });
 };
 
-const loadFileOrUrl = (browserWindow: BrowserWindow, appIsPackaged: boolean) => {
-    appIsPackaged
-        ? browserWindow.loadFile(join(__dirname, "..", "dist-renderer", "index.html"))
-        : browserWindow.loadURL(process.env.VITE_DEV_SERVER_URL);
+const loadFileOrUrl = (browserWindow: BrowserWindow) => {
+    process.env.VITE_DEV_SERVER_URL
+        ? browserWindow.loadURL(process.env.VITE_DEV_SERVER_URL)
+        : browserWindow.loadFile(join(__dirname, "..", "dist-renderer", "index.html"));
 };
 
 const registerIpcEventListeners = () => {
@@ -38,7 +38,7 @@ const registerNativeThemeEventListeners = (allBrowserWindows: BrowserWindow[]) =
 (async () => {
     await app.whenReady();
     const mainWindow = createBrowserWindow();
-    loadFileOrUrl(mainWindow, app.isPackaged);
+    loadFileOrUrl(mainWindow);
     registerIpcEventListeners();
     registerNativeThemeEventListeners(BrowserWindow.getAllWindows());
 })();

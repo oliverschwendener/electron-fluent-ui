@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
 
     const isServe = command === "serve";
     const isBuild = command === "build";
-    const sourcemap = isServe;
+    const sourcemap = isServe || process.argv.includes("--sourcemap");
 
     const resolve: { alias: AliasOptions } = {
         alias: {
