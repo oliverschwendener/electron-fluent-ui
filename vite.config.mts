@@ -66,7 +66,7 @@ export default defineConfig(({ command }) => {
                     },
                 },
             ]),
-            renderer(),
+            process.env.NODE_ENV === "test" ? null : renderer(),
         ],
         server: (() => ({
             host: "127.0.0.1",
