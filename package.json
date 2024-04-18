@@ -39,7 +39,7 @@
         "prettier": "^3.2.5",
         "prettier-plugin-organize-imports": "^3.2.4",
         "typescript": "^5.4.3",
-        "vite": "^5.2.8",
+        "vite": "^5.2.9",
         "vite-plugin-electron": "^0.28.4",
         "vite-plugin-electron-renderer": "^0.14.5",
         "vitest": "^1.5.0"
