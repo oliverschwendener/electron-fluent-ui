@@ -6,6 +6,14 @@ import electron from "vite-plugin-electron";
 import renderer from "vite-plugin-electron-renderer";
 import pkg from "./package.json";
 
+const rendererRoot = join(__dirname, "src", "renderer");
+const mainEntryPoint = join(__dirname, "src", "main", "index.ts");
+const preloadEntryPoint = join(__dirname, "src", "preload", "index.ts");
+
+const rendererOutDir = join(__dirname, "dist-renderer");
+const mainOutDir = join(__dirname, "dist-main");
+const preloadOutDir = join(__dirname, "dist-preload");
+
 export default defineConfig(({ command }) => {
     rmSync("dist-main", { recursive: true, force: true });
     rmSync("dist-preload", { recursive: true, force: true });
@@ -21,16 +29,17 @@ export default defineConfig(({ command }) => {
     };
 
     return {
-        root: "src/renderer",
+        root: rendererRoot,
         build: {
-            outDir: "../../dist-renderer",
+            emptyOutDir: true,
+            outDir: rendererOutDir,
         },
         resolve,
         plugins: [
             react(),
             electron([
                 {
-                    entry: "src/main/index.ts",
+                    entry: mainEntryPoint,
                     onstart(options) {
                         options.startup();
                     },
@@ -39,7 +48,7 @@ export default defineConfig(({ command }) => {
                         build: {
                             sourcemap,
                             minify: isBuild,
-                            outDir: "dist-main",
+                            outDir: mainOutDir,
                             rollupOptions: {
                                 external: Object.keys("dependencies" in pkg ? pkg.dependencies : {}),
                             },
@@ -47,7 +56,7 @@ export default defineConfig(({ command }) => {
                     },
                 },
                 {
-                    entry: "src/preload/index.ts",
+                    entry: preloadEntryPoint,
                     onstart(options) {
                         // Notify the Renderer-Process to reload the page when the Preload-Scripts build is complete,
                         // instead of restarting the entire Electron App.
@@ -58,7 +67,7 @@ export default defineConfig(({ command }) => {
                         build: {
                             sourcemap: sourcemap ? "inline" : undefined,
                             minify: isBuild,
-                            outDir: "dist-preload",
+                            outDir: preloadOutDir,
                             rollupOptions: {
                                 external: Object.keys("dependencies" in pkg ? pkg.dependencies : {}),
                             },
