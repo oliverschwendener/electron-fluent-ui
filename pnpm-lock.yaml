@@ -52,8 +52,8 @@ importers:
         specifier: ^1.5.2
         version: 1.5.2(vitest@1.5.2(@types/node@20.12.7))
       electron:
-        specifier: ^30.0.1
-        version: 30.0.1
+        specifier: ^30.0.3
+        version: 30.0.3
       electron-builder:
         specifier: ^24.13.3
         version: 24.13.3(electron-builder-squirrel-windows@24.13.3(dmg-builder@24.13.3))
@@ -1542,8 +1542,8 @@ packages:
   electron-to-chromium@1.4.625:
     resolution: {integrity: sha512-DENMhh3MFgaPDoXWrVIqSPInQoLImywfCwrSmVl3cf9QHzoZSiutHwGaB/Ql3VkqcQV30rzgdM+BjKqBAJxo5Q==}
 
-  electron@30.0.1:
-    resolution: {integrity: sha512-iwxkI/n2wBd29NH7TH0ZY8aWGzCoKpzJz+D10u7aGSJi1TV6d4MSM3rWyKvT/UkAHkTKOEgYfUyCa2vWQm8L0g==}
+  electron@30.0.3:
+    resolution: {integrity: sha512-h+suwx6e0fnv/9wi0/cmCMtG+4LrPzJZa+3DEEpxcPcP+pcWnBI70t8QspxgMNIh2wzXLMD9XVqrLkEbiBAInw==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -4895,7 +4895,7 @@ snapshots:
 
   electron-to-chromium@1.4.625: {}
 
-  electron@30.0.1:
+  electron@30.0.3:
     dependencies:
       '@electron/get': 2.0.2
       '@types/node': 20.12.7
@@ -5172,7 +5172,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.5.4
+      semver: 7.6.0
       serialize-error: 7.0.1
     optional: true
 
