@@ -61,6 +61,12 @@ const config = {
     },
     appx: {
         applicationId: "OliverSchwendener.ElectronFluentUI",
+        backgroundColor: "#1F1F1F",
+        displayName: "Electron Fluent UI",
+        identityName: "1915OliverSchwendener.ElectronFluentUI",
+        publisher: "CN=AD6BF16D-50E3-4FD4-B769-78A606AFF75E",
+        publisherDisplayName: "Oliver Schwendener",
+        languages: ["en-US"],
     },
 };
 
