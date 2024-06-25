@@ -7,7 +7,7 @@ import tseslint from "typescript-eslint";
 export default [
     ...tseslint.config(eslint.configs.recommended, ...tseslint.configs.recommended),
     {
-        ignores: ["coverage/", "dist-main/", "dist-preload/", "dist-renderer/", "node_modules/"],
+        ignores: ["dist-main/", "dist-preload/", "dist-renderer/", "node_modules/", "**/coverage/"],
     },
     {
         languageOptions: {
