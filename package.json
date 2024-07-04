@@ -34,7 +34,7 @@
         "@vitejs/plugin-react": "^4.3.1",
         "@vitest/coverage-v8": "^1.6.0",
         "electron": "^31.1.0",
-        "electron-builder": "24.9.1",
+        "electron-builder": "^24.13.3",
         "eslint": "^9.5.0",
         "prettier": "^3.3.2",
         "prettier-plugin-organize-imports": "^3.2.4",

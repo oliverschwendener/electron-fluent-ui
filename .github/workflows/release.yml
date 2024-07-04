@@ -26,6 +26,12 @@ jobs:
               with:
                   node-version: 20
 
+            - name: Configure pnpm for release
+              run: |
+                  pnpm config set shamefully-hoist true --location=project
+                  pnpm config set auto-install-peers true --location=project
+                  pnpm config set strict-peer-dependencies true --location=project
+
             - name: Install pnpm dependencies
               run: pnpm install
               env:

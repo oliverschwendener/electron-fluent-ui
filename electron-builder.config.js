@@ -35,9 +35,6 @@ const config = {
                 target: "msi",
             },
             {
-                target: "nsis",
-            },
-            {
                 target: "zip",
             },
             {
