@@ -15,46 +15,15 @@ const config = {
     },
     mac: {
         icon: "build/app-icon-dark.png",
-        hardenedRuntime: true,
-        gatekeeperAssess: false,
-        target: [
-            {
-                target: "dmg",
-                arch: "universal",
-            },
-            {
-                target: "zip",
-                arch: "universal",
-            },
-        ],
+        target: [{ target: "dmg" }, { target: "zip" }],
     },
     win: {
         icon: "build/app-icon-dark.png",
-        target: [
-            {
-                target: "msi",
-            },
-            {
-                target: "zip",
-            },
-            {
-                target: "appx",
-            },
-        ],
+        target: [{ target: "msi" }, { target: "zip" }, { target: "appx" }],
     },
     linux: {
         category: "Utility",
-        target: [
-            {
-                target: "AppImage",
-            },
-            {
-                target: "deb",
-            },
-            {
-                target: "zip",
-            },
-        ],
+        target: [{ target: "AppImage" }, { target: "deb" }, { target: "zip" }],
     },
     appx: {
         applicationId: "OliverSchwendener.ElectronFluentUI",
