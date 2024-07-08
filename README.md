@@ -12,35 +12,35 @@ This is a repo to quickly start the development of an electron application with 
 -   Install dependencies
 
     ```
-    $ pnpm install
+    $ npm install
     ```
 
 -   Run app in dev mode
 
     ```
-    $ pnpm dev
+    $ npm run dev
     ```
 
 -   Lint files
 
     ```
-    $ pnpm lint
+    $ npm run lint
     ```
 
 -   Perform typecheck
 
     ```
-    $ pnpm typecheck
+    $ npm run typecheck
     ```
 
 -   Run tests
 
     ```
-    $ pnpm test
+    $ npm run test
     ```
 
 -   Build and package app
 
     ```
-    $ pnpm build && pnpm package
+    $ npm run build && npm run package
     ```
