@@ -1,4 +1,4 @@
-import { Button, ProgressBar, Tab, TabList, Text, type Theme } from "@fluentui/react-components";
+import { Button, ProgressBar, Tab, TabList, Text, makeStyles, tokens } from "@fluentui/react-components";
 import {
     AddRegular,
     ArchiveRegular,
@@ -10,23 +10,28 @@ import {
     StarRegular,
 } from "@fluentui/react-icons";
 
-export const Sidebar = ({ theme }: { theme: Theme }) => {
+const useStyles = makeStyles({
+    sidebar: {
+        height: "100%",
+        width: "200px",
+        display: "flex",
+        flexDirection: "column",
+        borderRightWidth: "1px",
+        borderRightColor: tokens.colorNeutralStroke3,
+        borderRightStyle: "solid",
+        gap: "10px",
+        padding: "20px",
+        boxSizing: "border-box",
+        flexShrink: 0,
+    }
+});
+
+export const Sidebar = () => {
+    // Get styles for Fluent UI components using makeStyles function.
+    const styles = useStyles();
+
     return (
-        <div
-            style={{
-                height: "100%",
-                width: 200,
-                display: "flex",
-                flexDirection: "column",
-                borderRightWidth: 1,
-                borderRightColor: theme.colorNeutralStroke3,
-                borderRightStyle: "solid",
-                gap: 10,
-                padding: 20,
-                boxSizing: "border-box",
-                flexShrink: 0,
-            }}
-        >
+        <div className={styles.sidebar}>
             <Button icon={<AddRegular />}>New message</Button>
             <div style={{ flexGrow: 1 }}>
                 <TabList vertical defaultSelectedValue="tab1" appearance="subtle">
