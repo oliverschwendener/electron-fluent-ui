@@ -1,18 +1,23 @@
-import { Avatar, Input, Text } from "@fluentui/react-components";
+import { Avatar, Input, Text, makeStyles } from "@fluentui/react-components";
 import { SearchRegular } from "@fluentui/react-icons";
 
+const useStyles = makeStyles({
+    header: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        gap: "20px",
+    }
+});
+
 export const Header = () => {
+    // Get styles for Fluent UI components using makeStyles function.
+    const styles = useStyles();
+
     return (
-        <div
-            style={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                gap: 20,
-            }}
-        >
+        <div className={styles.header}>
             <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
                 <Input
                     autoFocus
