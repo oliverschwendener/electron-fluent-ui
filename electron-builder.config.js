@@ -21,7 +21,7 @@ const baseConfig = {
 const platformSpecificConfigurations = {
     darwin: {
         ...baseConfig,
-        afterPack: "./build/macos/codeSign.js",
+        afterPack: "./build/macos/codeSign.mjs",
         mac: {
             icon: "build/app-icon-dark.png",
             target: [{ target: "dmg" }, { target: "zip" }],

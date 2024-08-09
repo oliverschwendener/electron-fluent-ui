@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { execSync } = require("child_process");
-const { existsSync } = require("fs");
-const { join } = require("path");
+import { execSync } from "child_process";
+import { existsSync } from "fs";
+import { join } from "path";
 
 /**
  * This function performs an "ad-hoc" code signing on the packaged app.
@@ -39,4 +38,4 @@ const codeSign = (context) => {
     }
 };
 
-module.exports = codeSign;
+export default codeSign;

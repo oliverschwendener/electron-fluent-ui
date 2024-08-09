@@ -5,14 +5,7 @@ import tseslint from "typescript-eslint";
 export default [
     ...tseslint.config(eslint.configs.recommended, ...tseslint.configs.recommended),
     {
-        ignores: [
-            "dist-main/",
-            "dist-preload/",
-            "dist-renderer/",
-            "node_modules/",
-            "**/coverage/",
-            "build/macos/codeSign.js",
-        ],
+        ignores: ["dist-main/", "dist-preload/", "dist-renderer/", "node_modules/", "**/coverage/"],
     },
     {
         languageOptions: {
