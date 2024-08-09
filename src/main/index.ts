@@ -16,9 +16,11 @@ const createBrowserWindow = (): BrowserWindow => {
 };
 
 const loadFileOrUrl = (browserWindow: BrowserWindow) => {
-    process.env.VITE_DEV_SERVER_URL
-        ? browserWindow.loadURL(process.env.VITE_DEV_SERVER_URL)
-        : browserWindow.loadFile(join(__dirname, "..", "dist-renderer", "index.html"));
+    if (process.env.VITE_DEV_SERVER_URL) {
+        browserWindow.loadURL(process.env.VITE_DEV_SERVER_URL);
+    } else {
+        browserWindow.loadFile(join(__dirname, "..", "dist-renderer", "index.html"));
+    }
 };
 
 const registerIpcEventListeners = () => {

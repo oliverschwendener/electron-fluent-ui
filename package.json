@@ -26,7 +26,7 @@
         "typecheck:renderer": "tsc -p src/renderer/tsconfig.json --noEmit"
     },
     "devDependencies": {
-        "@eslint/js": "^9.6.0",
+        "@eslint/js": "^9.8.0",
         "@types/eslint__js": "^8.42.3",
         "@types/node": "^20.12.7",
         "@types/react": "^18.3.1",
@@ -36,12 +36,12 @@
         "@vitest/coverage-v8": "^2.0.1",
         "electron": "^31.1.0",
         "electron-builder": "^24.13.3",
-        "eslint": "^8.57.0",
+        "eslint": "^9.8.0",
         "globals": "^15.8.0",
         "prettier": "^3.3.2",
         "prettier-plugin-organize-imports": "^4.0.0",
         "typescript": "^5.5.3",
-        "typescript-eslint": "^7.16.0",
+        "typescript-eslint": "^8.0.1",
         "vite": "^5.3.1",
         "vite-plugin-electron": "^0.28.7",
         "vite-plugin-electron-renderer": "^0.14.5",
