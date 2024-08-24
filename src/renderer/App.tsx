@@ -11,8 +11,7 @@ import {
     TableRow,
     webDarkTheme,
     webLightTheme,
-    makeStyles,
-    tokens
+    makeStyles
 } from "@fluentui/react-components";
 import { useEffect, useState } from "react";
 import { Header } from "./Header";
@@ -23,8 +22,8 @@ import { ThemeProvider, useThemeContext } from './ContextTheme';
 
 const useStyles = makeStyles({
     root: {
-      backgroundColor: tokens.colorNeutralBackground1,
-      height: "100vh"
+        background: "transparent",
+        height: "100vh"
     },
     layout: {
         height: "100%",
