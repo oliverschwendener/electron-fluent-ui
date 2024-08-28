@@ -29,7 +29,7 @@
         "@eslint/js": "^9.9.1",
         "@types/eslint__js": "^8.42.3",
         "@types/node": "^20.12.7",
-        "@types/react": "^18.3.1",
+        "@types/react": "^18.3.4",
         "@types/react-dom": "^18.3.0",
         "@types/react-router-dom": "^5.3.3",
         "@vitejs/plugin-react": "^4.3.1",
@@ -52,7 +52,7 @@
         "@fluentui/react-icons": "^2.0.256",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "react-router": "^6.23.0",
-        "react-router-dom": "^6.23.0"
+        "react-router": "^6.26.1",
+        "react-router-dom": "^6.26.1"
     }
 }
