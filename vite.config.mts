@@ -31,6 +31,7 @@ export default defineConfig(({ command }) => {
     return {
         root: rendererRoot,
         build: {
+            sourcemap,
             emptyOutDir: true,
             outDir: rendererOutDir,
         },
