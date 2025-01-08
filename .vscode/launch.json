@@ -10,9 +10,20 @@
             "windows": {
                 "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
             },
-            "args": [".", "--remote-debugging-port=9229"],
+            "args": [".", "--remote-debugging-port=9222"],
             "outputCapture": "std",
             "preLaunchTask": "Before Debug"
+        },
+        {
+            "name": "Debug Renderer Process",
+            "port": 9222,
+            "request": "attach",
+            "type": "chrome",
+            "webRoot": "${workspaceFolder}/src/renderer",
+            "timeout": 60000,
+            "presentation": {
+                "hidden": true
+            }
         },
         {
             "type": "node",
@@ -24,6 +35,15 @@
             "args": ["run", "${relativeFile}"],
             "smartStep": true,
             "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Debug All",
+            "configurations": ["Debug Main Process", "Debug Renderer Process"],
+            "presentation": {
+                "order": 1
+            }
         }
     ]
 }
