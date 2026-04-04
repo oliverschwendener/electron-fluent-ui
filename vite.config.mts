@@ -3,7 +3,6 @@ import { rmSync } from "fs";
 import { join } from "path";
 import { defineConfig, type AliasOptions } from "vite";
 import electron from "vite-plugin-electron";
-import renderer from "vite-plugin-electron-renderer";
 import pkg from "./package.json";
 
 const rendererRoot = join(__dirname, "src", "renderer");
@@ -76,7 +75,6 @@ export default defineConfig(({ command }) => {
                     },
                 },
             ]),
-            process.env.NODE_ENV === "test" ? null : renderer(),
         ],
         server: (() => ({
             host: "127.0.0.1",
