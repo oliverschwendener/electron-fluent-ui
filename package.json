@@ -1,54 +1,53 @@
 {
-    "name": "electron-fluent-ui",
-    "description": "Template for developing Electron applications using TypeScript and Fluent UI React components",
-    "version": "4.5.2",
-    "license": "MIT",
-    "author": {
-        "email": "oliver.schwendener@proton.me",
-        "name": "Oliver Schwendener",
-        "url": "https://github.com/oliverschwendener"
-    },
-    "main": "dist-main/index.js",
-    "scripts": {
-        "build": "vite build",
-        "check": "npm run lint && npm run typecheck && npm run prettier:check && npm run test",
-        "dev": "vite",
-        "lint": "oxlint",
-        "package:publish": "electron-builder --config electron-builder.config.js --publish always",
-        "package": "electron-builder --config electron-builder.config.js",
-        "prettier:check": "prettier --check -- src/**/*.{ts,tsx}",
-        "prettier:write": "prettier --write -- src/**/*.{ts,tsx}",
-        "test:coverage": "vitest run --coverage",
-        "test:watch": "vitest",
-        "test": "vitest run",
-        "typecheck": "npm run typecheck:main && npm run typecheck:preload && npm run typecheck:renderer",
-        "typecheck:main": "tsc -p src/main/tsconfig.json --noEmit",
-        "typecheck:preload": "tsc -p src/preload/tsconfig.json --noEmit",
-        "typecheck:renderer": "tsc -p src/renderer/tsconfig.json --noEmit"
-    },
-    "devDependencies": {
-        "@types/node": "^25.0.9",
-        "@types/react": "^19.2.8",
-        "@types/react-dom": "^19.2.3",
-        "@types/react-router-dom": "^5.3.3",
-        "@vitejs/plugin-react": "^6.0.1",
-        "@vitest/coverage-v8": "^4.0.17",
-        "electron": "^42.4.0",
-        "electron-builder": "^26.6.0",
-        "oxlint": "^1.0.0",
-        "prettier": "^3.8.0",
-        "prettier-plugin-organize-imports": "^4.3.0",
-        "typescript": "^6.0.2",
-        "vite": "^8.0.3",
-        "vite-plugin-electron": "^0.29.1",
-        "vitest": "^4.0.17"
-    },
-    "dependencies": {
-        "@fluentui/react-components": "^9.72.9",
-        "@fluentui/react-icons": "^2.0.316",
-        "react": "^19.2.3",
-        "react-dom": "^19.2.3",
-        "react-router": "^7.12.0",
-        "react-router-dom": "^7.12.0"
-    }
+  "name": "electron-fluent-ui",
+  "version": "4.5.2",
+  "description": "Template for developing Electron applications using TypeScript and Fluent UI React components",
+  "license": "MIT",
+  "author": {
+    "name": "Oliver Schwendener",
+    "email": "oliver.schwendener@proton.me",
+    "url": "https://github.com/oliverschwendener"
+  },
+  "main": "dist-main/index.js",
+  "scripts": {
+    "build": "vite build",
+    "check": "npm run lint && npm run typecheck && npm run fmt:check && npm run test",
+    "dev": "vite",
+    "lint": "oxlint",
+    "package:publish": "electron-builder --config electron-builder.config.js --publish always",
+    "package": "electron-builder --config electron-builder.config.js",
+    "fmt:check": "oxfmt --check",
+    "fmt:write": "oxfmt --write",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "test": "vitest run",
+    "typecheck": "npm run typecheck:main && npm run typecheck:preload && npm run typecheck:renderer",
+    "typecheck:main": "tsc -p src/main/tsconfig.json --noEmit",
+    "typecheck:preload": "tsc -p src/preload/tsconfig.json --noEmit",
+    "typecheck:renderer": "tsc -p src/renderer/tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.72.9",
+    "@fluentui/react-icons": "^2.0.316",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router": "^7.12.0",
+    "react-router-dom": "^7.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/coverage-v8": "^4.0.17",
+    "electron": "^42.4.0",
+    "electron-builder": "^26.6.0",
+    "oxfmt": "^0.59.0",
+    "oxlint": "^1.0.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3",
+    "vite-plugin-electron": "^0.29.1",
+    "vitest": "^4.0.17"
+  }
 }

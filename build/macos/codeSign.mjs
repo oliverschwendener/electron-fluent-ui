@@ -13,29 +13,29 @@ import { join } from "path";
  * @returns void
  */
 const codeSign = (context) => {
-    const { appOutDir, packager } = context;
+  const { appOutDir, packager } = context;
 
-    const appName = packager.appInfo.productFilename;
-    const appPath = join(appOutDir, `${appName}.app`);
+  const appName = packager.appInfo.productFilename;
+  const appPath = join(appOutDir, `${appName}.app`);
 
-    if (!existsSync(appPath)) {
-        throw new Error(`App not found at path: ${appPath}`);
-    }
+  if (!existsSync(appPath)) {
+    throw new Error(`App not found at path: ${appPath}`);
+  }
 
-    console.log("Performing ad-hoc signing...");
+  console.log("Performing ad-hoc signing...");
 
-    try {
-        // Remove existing signature if any
-        execSync(`codesign --remove-signature "${appPath}"`, { stdio: "inherit" });
+  try {
+    // Remove existing signature if any
+    execSync(`codesign --remove-signature "${appPath}"`, { stdio: "inherit" });
 
-        // Perform ad-hoc signing
-        execSync(`codesign --force --deep -s - "${appPath}"`, { stdio: "inherit" });
+    // Perform ad-hoc signing
+    execSync(`codesign --force --deep -s - "${appPath}"`, { stdio: "inherit" });
 
-        console.log("Ad-hoc signing completed successfully");
-    } catch (error) {
-        console.error("Error during ad-hoc signing:", error.message);
-        throw error;
-    }
+    console.log("Ad-hoc signing completed successfully");
+  } catch (error) {
+    console.error("Error during ad-hoc signing:", error.message);
+    throw error;
+  }
 };
 
 export default codeSign;

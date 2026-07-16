@@ -9,38 +9,38 @@ This is a repo to quickly start the development of an electron application with 
 
 ## Development
 
--   Install dependencies
+- Install dependencies
 
-    ```
-    $ npm install
-    ```
+  ```
+  $ npm install
+  ```
 
--   Run app in dev mode
+- Run app in dev mode
 
-    ```
-    $ npm run dev
-    ```
+  ```
+  $ npm run dev
+  ```
 
--   Lint files
+- Lint files
 
-    ```
-    $ npm run lint
-    ```
+  ```
+  $ npm run lint
+  ```
 
--   Perform typecheck
+- Perform typecheck
 
-    ```
-    $ npm run typecheck
-    ```
+  ```
+  $ npm run typecheck
+  ```
 
--   Run tests
+- Run tests
 
-    ```
-    $ npm run test
-    ```
+  ```
+  $ npm run test
+  ```
 
--   Build and package app
+- Build and package app
 
-    ```
-    $ npm run build && npm run package
-    ```
+  ```
+  $ npm run build && npm run package
+  ```
