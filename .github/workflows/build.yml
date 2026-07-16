@@ -33,7 +33,7 @@ jobs:
         run: npm run typecheck
 
       - name: Prettier check
-        run: npm run oxfmt:check
+        run: npm run fmt:check
 
       - name: Run tests
         run: npm run test
