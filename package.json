@@ -13,7 +13,7 @@
         "build": "vite build",
         "check": "npm run lint && npm run typecheck && npm run prettier:check && npm run test",
         "dev": "vite",
-        "lint": "eslint .",
+        "lint": "oxlint",
         "package:publish": "electron-builder --config electron-builder.config.js --publish always",
         "package": "electron-builder --config electron-builder.config.js",
         "prettier:check": "prettier --check -- src/**/*.{ts,tsx}",
@@ -27,7 +27,6 @@
         "typecheck:renderer": "tsc -p src/renderer/tsconfig.json --noEmit"
     },
     "devDependencies": {
-        "@eslint/js": "^10.0.1",
         "@types/node": "^25.0.9",
         "@types/react": "^19.2.8",
         "@types/react-dom": "^19.2.3",
@@ -36,12 +35,10 @@
         "@vitest/coverage-v8": "^4.0.17",
         "electron": "^42.4.0",
         "electron-builder": "^26.6.0",
-        "eslint": "^10.2.0",
-        "globals": "^17.0.0",
+        "oxlint": "^1.0.0",
         "prettier": "^3.8.0",
         "prettier-plugin-organize-imports": "^4.3.0",
         "typescript": "^6.0.2",
-        "typescript-eslint": "^8.58.0",
         "vite": "^8.0.3",
         "vite-plugin-electron": "^0.29.1",
         "vitest": "^4.0.17"
