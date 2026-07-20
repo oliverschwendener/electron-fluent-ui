@@ -1,0 +1,79 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "import", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }]
+  },
+  "ignorePatterns": ["node_modules", "out", ".types"],
+  "overrides": [
+    {
+      "files": ["src/main/**", "src/preload/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["**/renderer/**", "@renderer/*"],
+                "message": "Main and preload code must not import renderer code. Move shared code to src/shared."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/renderer/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "electron",
+                "message": "The renderer must not use Electron APIs directly. Expose them through the preload bridge instead."
+              }
+            ],
+            "patterns": [
+              {
+                "group": ["**/main/**", "**/preload/**"],
+                "message": "Renderer code must not import main or preload code. Move shared code to src/shared."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/shared/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "electron",
+                "message": "Shared code must stay runtime-agnostic and must not depend on Electron."
+              }
+            ],
+            "patterns": [
+              {
+                "group": ["**/main/**", "**/preload/**", "**/renderer/**"],
+                "message": "Shared code must not import main, preload, or renderer code."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

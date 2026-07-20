@@ -1,46 +1,51 @@
-import { BrowserWindow, app, ipcMain, nativeTheme, type IpcMainEvent } from "electron";
-import { join } from "path";
+import { join } from "node:path";
 
-const createBrowserWindow = (): BrowserWindow => {
-  const preloadScriptFilePath = join(__dirname, "..", "dist-preload", "index.js");
+import { IpcChannels, type Versions } from "@shared/ipc";
+import { BrowserWindow, app, ipcMain } from "electron";
 
-  return new BrowserWindow({
-    autoHideMenuBar: true,
-    backgroundMaterial: "mica",
-    vibrancy: "header",
+const createWindow = (): void => {
+  const window = new BrowserWindow({
+    width: 960,
+    height: 640,
     webPreferences: {
-      preload: preloadScriptFilePath,
+      preload: join(import.meta.dirname, "../preload/index.cjs"),
+      contextIsolation: true,
+      sandbox: true,
     },
-    icon: join(__dirname, "..", "build", "app-icon-dark.png"),
   });
-};
 
-const loadFileOrUrl = (browserWindow: BrowserWindow) => {
-  if (process.env.VITE_DEV_SERVER_URL) {
-    browserWindow.loadURL(process.env.VITE_DEV_SERVER_URL);
+  // In development, electron-vite serves the renderer from its dev server.
+  if (process.env["ELECTRON_RENDERER_URL"]) {
+    void window.loadURL(process.env["ELECTRON_RENDERER_URL"]);
   } else {
-    browserWindow.loadFile(join(__dirname, "..", "dist-renderer", "index.html"));
+    void window.loadFile(join(import.meta.dirname, "../renderer/index.html"));
   }
 };
 
-const registerIpcEventListeners = () => {
-  ipcMain.on("themeShouldUseDarkColors", (event: IpcMainEvent) => {
-    event.returnValue = nativeTheme.shouldUseDarkColors;
-  });
+const registerIpcHandlers = (): void => {
+  ipcMain.handle(
+    IpcChannels.getVersions,
+    (): Versions => ({
+      electron: process.versions.electron ?? "unknown",
+      chromium: process.versions.chrome ?? "unknown",
+      node: process.versions.node,
+    }),
+  );
 };
 
-const registerNativeThemeEventListeners = (allBrowserWindows: BrowserWindow[]) => {
-  nativeTheme.addListener("updated", () => {
-    for (const browserWindow of allBrowserWindows) {
-      browserWindow.webContents.send("nativeThemeChanged");
+void app.whenReady().then(() => {
+  registerIpcHandlers();
+  createWindow();
+
+  app.on("activate", () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
     }
   });
-};
+});
 
-(async () => {
-  await app.whenReady();
-  const mainWindow = createBrowserWindow();
-  loadFileOrUrl(mainWindow);
-  registerIpcEventListeners();
-  registerNativeThemeEventListeners(BrowserWindow.getAllWindows());
-})();
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});

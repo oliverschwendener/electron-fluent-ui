@@ -1,27 +1,6 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-tsconfig.tsbuildinfo
-
-node_modules
-dist-main
-dist-preload
-dist-renderer
-release
-coverage
-*.local
-
-# Editor directories and files
-.vscode/.debug.env
-.idea
+node_modules/
+out/
+.types/
+*.tsbuildinfo
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.claude/settings.local.json

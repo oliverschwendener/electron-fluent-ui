@@ -1,7 +1,8 @@
-import type { ContextBridge } from "@common/ContextBridge";
+import { IpcChannels, type RendererApi } from "@shared/ipc";
 import { contextBridge, ipcRenderer } from "electron";
 
-contextBridge.exposeInMainWorld("ContextBridge", <ContextBridge>{
-  onNativeThemeChanged: (callback: () => void) => ipcRenderer.on("nativeThemeChanged", callback),
-  themeShouldUseDarkColors: () => ipcRenderer.sendSync("themeShouldUseDarkColors"),
-});
+const api: RendererApi = {
+  getVersions: () => ipcRenderer.invoke(IpcChannels.getVersions),
+};
+
+contextBridge.exposeInMainWorld("api", api);
