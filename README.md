@@ -1,4 +1,4 @@
-# electron-base-ui
+# electron-fluent-ui
 
 An Electron starter with a strict main/renderer/shared split.
 
