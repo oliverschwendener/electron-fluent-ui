@@ -1,15 +1,12 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "outDir": ".types/web",
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
     "types": ["vite/client"],
     "paths": {
-      "@shared/*": ["./src/shared/*"],
-      "@renderer/*": ["./src/renderer/src/*"]
+      "@shared/*": ["./src/shared/*"]
     }
   },
-  "include": ["src/renderer/**/*"],
-  "references": [{ "path": "./tsconfig.shared.json" }]
+  "include": ["src/renderer/**/*", "src/shared/**/*"]
 }

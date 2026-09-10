@@ -13,18 +13,34 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }]
   },
-  "ignorePatterns": ["node_modules", "out", ".types"],
+  "ignorePatterns": ["node_modules", "out"],
   "overrides": [
     {
-      "files": ["src/main/**", "src/preload/**"],
+      "files": ["src/main/**"],
       "rules": {
         "no-restricted-imports": [
           "error",
           {
             "patterns": [
               {
-                "group": ["**/renderer/**", "@renderer/*"],
-                "message": "Main and preload code must not import renderer code. Move shared code to src/shared."
+                "group": ["**/renderer/**", "**/preload/**"],
+                "message": "Main code must not import renderer or preload code. Move shared code to src/shared."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/preload/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["**/renderer/**", "**/main/**"],
+                "message": "Preload code must not import renderer or main code. Move shared code to src/shared."
               }
             ]
           }

@@ -26,10 +26,7 @@ export default defineConfig({
   },
   renderer: {
     resolve: {
-      alias: {
-        ...sharedAlias,
-        "@renderer": resolve(import.meta.dirname, "src/renderer/src"),
-      },
+      alias: sharedAlias,
     },
     plugins: [react()],
   },

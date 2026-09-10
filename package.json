@@ -6,15 +6,15 @@
   "type": "module",
   "main": "out/main/index.js",
   "scripts": {
+    "build": "electron-vite build",
+    "check": "npm run typecheck && npm run lint && npm run fmt:check && npm run test",
     "dev": "electron-vite dev",
-    "build": "npm run typecheck && electron-vite build",
-    "start": "electron-vite preview",
-    "typecheck": "tsc -b",
+    "fmt:check": "oxfmt --check",
+    "fmt:write": "oxfmt --write",
     "lint": "oxlint",
-    "format": "oxfmt",
-    "format:check": "oxfmt --check",
-    "format:write": "oxfmt --write",
-    "test": "vitest run"
+    "start": "electron-vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc -b"
   },
   "devDependencies": {
     "@fluentui/react-components": "^9.74.4",

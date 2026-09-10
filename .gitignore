@@ -1,6 +1,5 @@
 node_modules/
 out/
-.types/
 *.tsbuildinfo
 .DS_Store
 .claude/settings.local.json
