@@ -55,7 +55,7 @@ payload types are defined once and used by all sides. To add a channel:
 3. Forward it in the preload (`src/preload/index.ts`) — the `RendererApi` type
    ensures preload and renderer stay in sync.
 4. Call it in the renderer via `window.api.…` (typed through
-   `src/renderer/src/env.d.ts`).
+   `src/renderer/env.d.ts`).
 
 The preload script is built as CommonJS so the renderer can keep `sandbox: true`
 (Electron does not support ESM preload scripts in sandboxed renderers).
