@@ -23,14 +23,11 @@ const createWindow = (): void => {
 };
 
 const registerIpcHandlers = (): void => {
-  ipcMain.handle(
-    IpcChannels.getVersions,
-    (): Versions => ({
-      electron: process.versions.electron ?? "unknown",
-      chromium: process.versions.chrome ?? "unknown",
-      node: process.versions.node,
-    }),
-  );
+  ipcMain.handle(IpcChannels.getVersions, (): Versions => ({
+    electron: process.versions.electron ?? "unknown",
+    chromium: process.versions.chrome ?? "unknown",
+    node: process.versions.node,
+  }));
 };
 
 void app.whenReady().then(() => {
