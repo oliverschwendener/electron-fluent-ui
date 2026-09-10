@@ -158,7 +158,7 @@ const SpinButtonDemo = () => (
 const DialogDemo = () => (
   <Dialog>
     <DialogTrigger disableButtonEnhancement>
-      <Button appearance="subtle">Delete workspace…</Button>
+      <Button>Delete workspace…</Button>
     </DialogTrigger>
     <DialogSurface>
       <DialogBody>

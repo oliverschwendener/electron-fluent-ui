@@ -7,7 +7,6 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     height: "100vh",
-    backgroundColor: tokens.colorNeutralBackground3,
   },
   nav: {
     padding: "0.5rem 1rem",
@@ -33,7 +32,6 @@ export const App = () => {
     <div className={styles.app}>
       <nav className={styles.nav}>
         <TabList
-          appearance="subtle"
           size="small"
           selectedValue={pathname}
           onTabSelect={(_, data) => void navigate(data.value as string)}

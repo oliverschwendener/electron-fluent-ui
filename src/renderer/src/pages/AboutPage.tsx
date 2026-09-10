@@ -14,12 +14,7 @@ export const AboutPage = () => {
   return (
     <section>
       <h1>About</h1>
-      <TabList
-        size="small"
-        appearance="subtle"
-        selectedValue={tab}
-        onTabSelect={(_, data) => setTab(data.value)}
-      >
+      <TabList size="small" selectedValue={tab} onTabSelect={(_, data) => setTab(data.value)}>
         <Tab value="stack">Stack</Tab>
         <Tab value="structure">Structure</Tab>
       </TabList>
