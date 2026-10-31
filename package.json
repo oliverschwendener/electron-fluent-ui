@@ -26,7 +26,7 @@
     "@vitejs/plugin-react": "^6.0.3",
     "electron": "^44.3.0",
     "electron-vite": "^6.0.0-beta.1",
-    "happy-dom": "^20.11.0",
+    "happy-dom": "^21.0.4",
     "oxfmt": "^0.67.0",
     "oxlint": "^1.74.0",
     "react": "^19.2.7",
